@@ -93,13 +93,19 @@ You should see **kvm_intel** or **kvm_amd**
 sudo qemu-system-x86_64 --enable-kvm --cdrom <iso-name>.iso -m 2048
 ```
 
-# References
+# 📚 References
 
-Debian Official Website
-https://www.debian.org
+- 🌐 [Debian Official Website](https://www.debian.org)
+- 🐉 [Kali Linux Official Website](https://www.kali.org)
+- 🧠 [The Linux Kernel (GitHub)](https://github.com/torvalds/linux)
 
-Kali Linux Official Website
-https://www.kali.org
+---
 
-The Linux Kernel
-https://github.com/torvalds/linux
+## 🚧 Project Status
+
+This project is still under active development.  
+Contributions, suggestions, and improvements are welcome! 😊
+
+---
+
+# 🏷️ #hobby_project
