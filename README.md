@@ -1,17 +1,19 @@
 ![Zyphor Logo](zyphor-config/variant-xfce/includes.chroot/etc/calamares/branding/zyphor/zyphor-full.png)
-by Mark Jason Penote Espelita
-Facebook: https://www.facebook.com/mark.jason.penote.espelita
-Email: markjasonespelita@gmail.com
-Contact: 09978972884 | 09203454006
-Created: March 30, 2026
+**By:** Mark Jason Penote Espelita  
+**Facebook:** https://www.facebook.com/mark.jason.penote.espelita  
+**Email:** markjasonespelita@gmail.com  
+**Contact:** 09978972884 | 09203454006  
+**Created:** March 30, 2026
 
-# Build-Scripts
+# Introduction
 
 **Zyphor** is a custom Linux distribution built on top of the powerful foundations of **Kali Linux** and **Debian**.
 
 Designed with simplicity, performance, and control in mind, **Zyphor** aims to deliver a streamlined operating system experience without unnecessary bloat.
 
 One of **Zyphor**’s core goals is to provide a Windows-like user experience — making it easy for users transitioning from Windows to feel right at home. From layout and navigation to workflow and usability, **Zyphor** minimizes the learning curve while still offering the full power of Linux underneath.
+
+# Build-Scripts
 
 ## Packages and Initialization
 
