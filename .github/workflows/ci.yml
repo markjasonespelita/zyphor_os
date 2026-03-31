@@ -1,1 +1,59 @@
-# CI File
+# BETA
+
+name: CI/CD Zyphor OS
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - develop
+      - master
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show branch
+        run: echo "Running CI on ${{ github.ref }}"
+
+      # - name: Run tests
+      #   run: php artisan test
+
+  release:
+    name: Semantic Release (master only)
+    if: github.ref == 'refs/heads/master'
+    needs: ci
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install semantic-release dependencies
+        run: |
+          npm install -g semantic-release \
+            @semantic-release/changelog \
+            @semantic-release/git \
+            @semantic-release/github \
+            @semantic-release/commit-analyzer \
+            @semantic-release/release-notes-generator
+
+      - name: Run Semantic Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
