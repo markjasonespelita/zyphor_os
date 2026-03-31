@@ -1,3 +1,10 @@
+## [0.0.7](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.6...v0.0.7) (2026-03-31)
+
+
+### Bug Fixes
+
+* added a zyphor-config folder, and added a xfce wallpaper configuration issue on github. ([5431969](https://github.com/markjasonespelita/zyphor_os/commit/54319695a1934f5890798f1024e3a6e047501124))
+
 ## [0.0.6](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.5...v0.0.6) (2026-03-31)
 
 
