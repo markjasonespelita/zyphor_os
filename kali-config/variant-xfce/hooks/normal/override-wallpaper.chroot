@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "Setting Zyphor wallpapers..."
-
-rm -rf /usr/share/backgrounds/kali*
-cp -r /usr/share/backgrounds/zyphor /usr/share/backgrounds/
