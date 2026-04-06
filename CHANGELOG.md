@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.11...v0.0.12) (2026-04-06)
+
+
+### Bug Fixes
+
+* removed background sub folder 'zyphor', fixed calamares branding path, change default wallpaper by renaming. ([540b767](https://github.com/markjasonespelita/zyphor_os/commit/540b7675d26611e0bfe25c1adfd42a0edb2d236e))
+
 ## [0.0.11](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.10...v0.0.11) (2026-04-06)
 
 
