@@ -1,4 +1,4 @@
-![Zyphor Logo](zyphor-config/variant-xfce/includes.chroot/etc/calamares/branding/zyphor/zyphor-full.png)
+![Zyphor Logo](kali-config/variant-xfce/includes.chroot/usr/share/calamares/branding/zyphor/zyphor-full.png)
 **By:** Mark Jason Penote Espelita  
 **Facebook:** https://www.facebook.com/mark.jason.penote.espelita  
 **Email:** markjasonespelita@gmail.com  
