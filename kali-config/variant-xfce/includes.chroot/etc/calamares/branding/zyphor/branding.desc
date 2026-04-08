@@ -1,6 +1,6 @@
 ---
-componentName: Zyphor
+componentName: zyphor
 version: 1.0
-shortDescription: Zyphor OS Installer
+shortDescription: zyphor OS Installer
 logo: "zyphor-256x256.png"
 welcomeStyle: "sidebar"
