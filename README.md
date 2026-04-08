@@ -103,7 +103,7 @@ sudo qemu-img create -f qcow2 zyphor_test.qcow2 25G
 ## Load the ISO file inside the virtual disk
 
 ```bash
-sudo qemu-system-x86_64 --cdrom <iso-name>.iso --hda zyphor_test.qcow2 --boot d -m 2048
+sudo qemu-system-x86_64 --enable-kvm --cdrom <iso-name>.iso --hda zyphor_test.qcow2 --boot d -m 2048
 ```
 
 ## Boot virtual disk
