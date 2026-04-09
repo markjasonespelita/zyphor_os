@@ -1,3 +1,10 @@
+## [0.0.21](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.20...v0.0.21) (2026-04-09)
+
+
+### Bug Fixes
+
+* added a shortcut for the default background image by default during the desktop boot on the /usr/share/images/desktop-base/default ([ada0c3f](https://github.com/markjasonespelita/zyphor_os/commit/ada0c3f5fc769c6c3d8ce05513a133e524b2a94e))
+
 ## [0.0.20](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.19...v0.0.20) (2026-04-08)
 
 
