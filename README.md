@@ -169,9 +169,9 @@ License details for individual packages can be found in:
 
 **Zyphor OS** is an independent project and is not affiliated with, endorsed by, or sponsored by:
 
-**Debian**
-**Kali Linux**
-**Offensive Security**
+**Debian** 
+**Kali Linux** 
+**Offensive Security** 
 
 All trademarks and registered trademarks are the property of their respective owners.
 
