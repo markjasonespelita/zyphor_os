@@ -1,3 +1,10 @@
+## [0.0.27](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.26...v0.0.27) (2026-04-10)
+
+
+### Bug Fixes
+
+* added a custom .face icon on the /etc/skel/.face, and modified the lightdm-gtk-greeter default-user-image = /etc/skel/.face.icon, and modified the kali finish install config that will create a symlink of the new .face icon as .face.icon. ([686ae52](https://github.com/markjasonespelita/zyphor_os/commit/686ae52d5766138526becce41bd379f01bbb76ed))
+
 ## [0.0.26](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.25...v0.0.26) (2026-04-10)
 
 
