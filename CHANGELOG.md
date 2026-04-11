@@ -1,3 +1,10 @@
+## [0.0.28](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.27...v0.0.28) (2026-04-11)
+
+
+### Bug Fixes
+
+* replace the kali-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/grub-bootloader-screen-saver.png with much larger resolution, replace the kali-config/variant-xfce/includes.chroot/etc/skel/.face with smaller png version, and remove the override files on the xdg folder that causes xfce4-session error after login. ([60227cd](https://github.com/markjasonespelita/zyphor_os/commit/60227cda6417cd793255cc5e5f6eb44bfed4ae68))
+
 ## [0.0.27](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.26...v0.0.27) (2026-04-10)
 
 
