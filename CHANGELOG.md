@@ -1,3 +1,10 @@
+## [0.0.32](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.31...v0.0.32) (2026-04-13)
+
+
+### Bug Fixes
+
+* renamed whiskermenu default.rc to defaults.rc. ([5cf2474](https://github.com/markjasonespelita/zyphor_os/commit/5cf24743f310d3837abf43a8ec1020c5c68e6ffd))
+
 ## [0.0.31](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.30...v0.0.31) (2026-04-13)
 
 
