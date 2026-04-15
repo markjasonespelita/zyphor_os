@@ -2,7 +2,7 @@
 # Global Property
 title-text: ""
 #desktop-image: "/boot/grub/themes/kali/themes.txt"
-desktop-image" "/boot/zyphor/splash.png"
+desktop-image: "/boot/zyphor/splash.png"
 desktop-color: "#2f5595"
 terminal-left: "0"
 terminal-top: "0"
