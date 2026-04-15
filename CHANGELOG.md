@@ -1,3 +1,10 @@
+## [0.0.35](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.34...v0.0.35) (2026-04-15)
+
+
+### Bug Fixes
+
+* moved the /boot folder in the root folder rather than inside the /etc. ([06d2f6f](https://github.com/markjasonespelita/zyphor_os/commit/06d2f6f8cb718eac21d399db7b7da79941bc34cb))
+
 ## [0.0.34](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.33...v0.0.34) (2026-04-14)
 
 
