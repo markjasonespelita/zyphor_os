@@ -1,3 +1,21 @@
+# [1.1.0](https://github.com/markjasonespelita/zyphor_os/compare/v1.0.0...v1.1.0) (2026-04-20)
+
+
+### Bug Fixes
+
+* fixes zyphor.txt ascii icon path. ([05e275e](https://github.com/markjasonespelita/zyphor_os/commit/05e275ec8bc2420385945d1378a0d430f528684f))
+
+
+### Features
+
+* added a cli abstraction layer files, directory and symlinks. ([2b58b09](https://github.com/markjasonespelita/zyphor_os/commit/2b58b093fc192330f6bbbbb2941e8334169c5022))
+* added a cli abstraction layer files, directory and symlinks. ([3633094](https://github.com/markjasonespelita/zyphor_os/commit/3633094a79d319d093e2b073b48d82b2e7b96ffc))
+* added cli abstraction layer of system, service, pkg, and doctor. ([f9baa36](https://github.com/markjasonespelita/zyphor_os/commit/f9baa368434d667ff2aa5d0678a82f213f9c4195))
+* added fastfetch as default pre installed binary. ([a8651f3](https://github.com/markjasonespelita/zyphor_os/commit/a8651f3a2bd47d17d3592db378e577938071eb11))
+* added fastfetch configs. ([e2298ad](https://github.com/markjasonespelita/zyphor_os/commit/e2298ad6be6450db92740628f0ac67bc90a982de))
+* codebase cleaner structure implemented. ([963d38a](https://github.com/markjasonespelita/zyphor_os/commit/963d38a79c039f104dea16406b2cbdacd95ed6a0))
+* zyphor cli - Convert to professional structure, Refactored Command Mapping, New folder structure. ([8e732cd](https://github.com/markjasonespelita/zyphor_os/commit/8e732cd54795ad58e576d3a54a14b44c5aa477b4))
+
 # [1.0.0](https://github.com/markjasonespelita/zyphor_os/compare/v0.0.38...v1.0.0) (2026-04-16)
 
 
