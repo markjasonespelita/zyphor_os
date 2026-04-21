@@ -37,6 +37,10 @@ configure_zyphor() {
 
     ln -sf /etc/skel/.face /etc/skel/.face.icon
 
+    # download zyphor-cli
+
+    apt install zyphor-cli -y
+
     # Zyphor Custom Commands configurations - allow custom commands to be executable
 
     chmod +x /usr/local/bin/zyphor
