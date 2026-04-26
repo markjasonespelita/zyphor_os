@@ -1,0 +1,20 @@
+#!/bin/bash
+
+FLAG="$HOME/.zyphor_firstboot_done"
+
+# Run only once
+if [ -f "$FLAG" ]; then
+    exit 0
+fi
+
+echo "INFO: Running Zyphor first boot setup..."
+
+# ── Apply XFCE Panel Profile ─────────────────────────────
+xfce4-panel-profiles load "/usr/share/xfce4-panel-profiles/layouts/Redmond 7.tar.bz2"
+
+# ── Apply Zyphor icon to panel launchers ─────────────────
+find "$HOME/.config/xfce4/panel/" -name "*.rc" \
+    -exec sed -i 's|^button-icon=.*|button-icon=/usr/share/pixmaps/zyphor-logo.png|' {} +
+
+# ── Mark as done ─────────────────────────────────────────
+touch "$FLAG"

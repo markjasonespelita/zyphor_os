@@ -37,14 +37,12 @@ configure_zyphor() {
        /boot/zyphor/splash.png
     update-grub
 
-    # ── XFCE Panel - Redmond 7 + Zyphor Icon ──────────────────────────────────
-    echo "INFO: Applying Redmond 7 panel profile and Zyphor icon..."
-    xfce4-panel-profiles load "/usr/share/xfce4-panel-profiles/layouts/Redmond 7.tar.bz2"
+    # Redmond 7 Configuration
     cp /etc/skel/.face /usr/share/pixmaps/zyphor-logo.png
-    find ~/.config/xfce4/panel/ -name "*.rc" \
-        | xargs sed -i 's|^button-icon=.*|button-icon=/usr/share/pixmaps/zyphor-logo.png|'
     gtk-update-icon-cache /usr/share/icons/hicolor/ -f -t
-    xfce4-panel --restart
+
+    chmod +x /usr/local/bin/zyphor-firstboot
+    # End Of Redmond 7 Configuration
 
     # ── Zyphor CLI ─────────────────────────────────────────────────────────────
     echo "INFO: Installing Zyphor CLI..."
