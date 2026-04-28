@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/markjasonespelita/zyphor_os/compare/v1.5.0...v1.5.1) (2026-04-28)
+
+
+### Bug Fixes
+
+* remove ip configurations on the kali finish install. ([7ba415c](https://github.com/markjasonespelita/zyphor_os/commit/7ba415c80771f099970019fe7d5a9fb0dfa2b67f))
+
 # [1.5.0](https://github.com/markjasonespelita/zyphor_os/compare/v1.4.1...v1.5.0) (2026-04-28)
 
 
