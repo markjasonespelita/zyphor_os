@@ -1,0 +1,11 @@
+PRETTY_NAME="Zyphor OS"
+NAME="Zyphor OS GNU/Linux"
+VERSION_ID="1.6.1"
+VERSION="1.6.1"
+VERSION_CODENAME=zyphor-os
+ID=zyphor-os
+ID_LIKE=debian
+HOME_URL="https://www.kali.org/"
+SUPPORT_URL="https://forums.kali.org/"
+BUG_REPORT_URL="https://bugs.kali.org/"
+ANSI_COLOR="1;31"
