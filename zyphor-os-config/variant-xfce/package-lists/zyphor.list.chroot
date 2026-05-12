@@ -26,3 +26,5 @@ php8.4-intl
 php8.4-redis
 php8.4-gd
 libapache2-mod-php8.4
+
+guvcview
