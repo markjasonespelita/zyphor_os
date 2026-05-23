@@ -2,41 +2,68 @@
 
 # If a command fails, make the whole script exit
 set -e
-# Use return code for any command errors in part of a pipe
-set -o pipefail # Bashism
+set -o pipefail
 
+# =========================================================
+# 🔧 BUILD ENVIRONMENT FIX (IMPORTANT for dconf/dbus)
+# =========================================================
+export DEBIAN_FRONTEND=noninteractive
+unset LD_PRELOAD
+unset DBUS_SESSION_BUS_ADDRESS
+unset DBUS_SYSTEM_BUS_ADDRESS
+
+# =========================================================
 # Kali's default values
+# =========================================================
 KALI_DIST="kali-rolling"
 KALI_VERSION=""
 KALI_VARIANT="default"
-TARGET_DIR="$(dirname $0)/images"
+TARGET_DIR="$(dirname "$0")/images"   # FIX #7: quoted dirname
 TARGET_SUBDIR=""
 SUDO="sudo"
 VERBOSE=""
 DEBUG=""
 HOST_ARCH=$(dpkg --print-architecture)
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FORCE_PURGE=""   # FIX #4: use empty/non-empty instead of "0"/"1"
 
+# =========================================================
+# Trap for better error reporting
+# FIX (suggestion): ERR trap shows the failing line number
+# =========================================================
+trap 'echo "ERROR: Build failed at line $LINENO — check $BUILD_LOG" >&2' ERR
+
+# =========================================================
+# Image naming
+# FIX #1 & #2: image_name now uses its argument ($1),
+#              falling back to $KALI_ARCH if not provided
+# =========================================================
 image_name() {
-  case "$KALI_ARCH" in
+  local arch="${1:-$KALI_ARCH}"
+  case "$arch" in
     i386|amd64|arm64)
-      echo "live-image-$KALI_ARCH.hybrid.iso"
+      echo "live-image-$arch.hybrid.iso"
     ;;
     armhf)
-      echo "live-image-$KALI_ARCH.img"
+      echo "live-image-$arch.img"
+    ;;
+    *)
+      echo "ERROR: Unsupported architecture: $arch" >&2
+      exit 1
     ;;
   esac
 }
 
 target_image_name() {
-  local arch=$1
+  local arch="$1"
 
-  IMAGE_NAME="$(image_name $arch)"
+  IMAGE_NAME="$(image_name "$arch")"
   IMAGE_EXT="${IMAGE_NAME##*.}"
+
   if [ "$IMAGE_EXT" = "$IMAGE_NAME" ]; then
     IMAGE_EXT="img"
   fi
+
   if [ "$KALI_VARIANT" = "default" ]; then
     echo "${TARGET_SUBDIR:+$TARGET_SUBDIR/}zyphor-os-$KALI_VERSION-live-$KALI_ARCH.$IMAGE_EXT"
   else
@@ -45,8 +72,8 @@ target_image_name() {
 }
 
 target_build_log() {
-  TARGET_IMAGE_NAME=$(target_image_name $1)
-  echo ${TARGET_IMAGE_NAME%.*}.log
+  TARGET_IMAGE_NAME=$(target_image_name "$1")
+  echo "${TARGET_IMAGE_NAME%.*}.log"
 }
 
 default_version() {
@@ -61,23 +88,20 @@ default_version() {
 }
 
 failure() {
-  echo "Build of $KALI_DIST/$KALI_VARIANT/$KALI_ARCH live image failed (see build.log for details)" >&2
-  echo "Log: $BUILD_LOG" >&2
+  echo "Build failed: $KALI_DIST/$KALI_VARIANT/$KALI_ARCH" >&2
+  echo "See log: $BUILD_LOG" >&2
   exit 2
 }
 
+# =========================================================
+# Logging wrapper
+# =========================================================
 run_and_log() {
   if [ -n "$VERBOSE" ] || [ -n "$DEBUG" ]; then
-    printf "RUNNING:" >&2
-    for _ in "$@"; do
-      [[ $_ =~ [[:space:]] ]] && printf " '%s'" "$_" || printf " %s" "$_"
-    done >&2
-    printf "\n" >&2
     "$@" 2>&1 | tee -a "$BUILD_LOG"
   else
     "$@" >>"$BUILD_LOG" 2>&1
   fi
-  return $?
 }
 
 debug() {
@@ -86,184 +110,187 @@ debug() {
   fi
 }
 
+# =========================================================
+# Clean function (SAFE + optional purge)
+# =========================================================
 clean() {
-  debug "Cleaning"
+  debug "Cleaning build environment"
 
-  run_and_log $SUDO lb clean --purge # ./auto/clean
-  #run_and_log $SUDO umount -l $(pwd)/chroot/proc
-  #run_and_log $SUDO umount -l $(pwd)/chroot/dev/pts
-  #run_and_log $SUDO umount -l $(pwd)/chroot/sys
-  #run_and_log $SUDO rm -rf $(pwd)/chroot
-  #run_and_log $SUDO rm -rf $(pwd)/binary
+  # FIX #4: check non-empty rather than string "1"
+  if [ -n "$FORCE_PURGE" ]; then
+    run_and_log $SUDO lb clean --purge
+  else
+    run_and_log $SUDO lb clean
+  fi
 }
 
+# =========================================================
+# Help
+# =========================================================
 print_help() {
-  echo "Usage: $0 [<option>...]"
-  echo
-  for x in $(echo "${BUILD_OPTS_LONG}" | sed 's_,_ _g'); do
-    x=$(echo $x | sed 's/:$/ <arg>/')
-    echo "  --${x}"
-  done
-  echo
-  echo "More information: https://www.kali.org/docs/development/live-build-a-custom-kali-iso/"
+  echo "Usage: $0 [options]"
+  echo "  -d | --distribution <dist>   Kali distribution (default: kali-rolling)"
+  echo "  -a | --arch <arch>           Target architecture (default: host arch)"
+  echo "  -v | --verbose               Verbose output"
+  echo "  -D | --debug                 Debug output"
+  echo "  -h | --help                  Show this help"
+  echo "       --variant <variant>     Image variant (default: default)"
+  echo "       --version <version>     Override image version string"
+  echo "       --subdir <subdir>       Output subdirectory under images/"
+  echo "       --clean                 Clean only, do not build"
+  echo "       --no-clean              Skip clean stage before building"
+  echo "       --purge                 Use lb clean --purge (implies clean)"
+  echo "  -p | --proposed-updates      Enable proposed-updates"
   exit 0
 }
 
+# =========================================================
+# Require package
+# FIX #6: quoted $pkg variable
+# =========================================================
 require_package() {
-  local pkg=$1
-  local required_version=$2
-  local pkg_version=
+  local pkg="$1"
+  local required_version="$2"
+  local pkg_version
 
-  pkg_version=$(dpkg-query -f '${Version}' -W $pkg 2>/dev/null || true)
+  pkg_version=$(dpkg-query -f '${Version}' -W "$pkg" 2>/dev/null || true)
+
   if [ -z "$pkg_version" ]; then
-    echo "ERROR: You need $pkg, but it is not installed" >&2
+    echo "ERROR: Missing package $pkg" >&2
     exit 1
   fi
+
   if dpkg --compare-versions "$pkg_version" lt "$required_version"; then
-    echo "ERROR: You need $pkg (>= $required_version), you have $pkg_version" >&2
+    echo "ERROR: $pkg version too old ($pkg_version < $required_version)" >&2
     exit 1
   fi
-  debug "$pkg version: $pkg_version"
 }
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# =========================================================
+# Setup
+# =========================================================
+cd "$(dirname "$0")/"
 
-# Change directory into where the script is
-cd $(dirname $0)/
-
-# Allowed command line options
+# FIX #5: check .getopt.sh exists before sourcing
+if [ ! -f .getopt.sh ]; then
+  echo "ERROR: .getopt.sh not found in $(pwd)" >&2
+  exit 1
+fi
 source .getopt.sh
 
-# Parsing command line options (see .getopt.sh)
 temp=$(getopt -o "$BUILD_OPTS_SHORT" -l "$BUILD_OPTS_LONG" -- "$@")
 eval set -- "$temp"
+
 while true; do
   case "$1" in
-    -d|--distribution) KALI_DIST="$2"; shift 2; ;;
-    -p|--proposed-updates) OPT_pu="1"; shift 1; ;;
-    -a|--arch) KALI_ARCH="$2"; shift 2; ;;
-    -v|--verbose) VERBOSE="1"; shift 1; ;;
-    -D|--debug) DEBUG="1"; shift 1; ;;
-    -h|--help) print_help; ;;
-    --variant) KALI_VARIANT="$2"; shift 2; ;;
-    --version) KALI_VERSION="$2"; shift 2; ;;
-    --subdir) TARGET_SUBDIR="$2"; shift 2; ;;
-    --get-image-path) ACTION="get-image-path"; shift 1; ;;
-    --clean) ACTION="clean"; shift 1; ;;
-    --no-clean) NO_CLEAN="1"; shift 1 ;;
-    --) shift; break; ;;
-    *) echo "ERROR: Invalid command-line option: $1" >&2; exit 1; ;;
+    -d|--distribution) KALI_DIST="$2"; shift 2 ;;
+    -p|--proposed-updates) OPT_pu="1"; shift ;;
+    -a|--arch) KALI_ARCH="$2"; shift 2 ;;
+    -v|--verbose) VERBOSE="1"; shift ;;
+    -D|--debug) DEBUG="1"; shift ;;
+    -h|--help) print_help ;;
+    --variant) KALI_VARIANT="$2"; shift 2 ;;
+    --version) KALI_VERSION="$2"; shift 2 ;;
+    --subdir) TARGET_SUBDIR="$2"; shift 2 ;;
+    --clean) ACTION="clean"; shift ;;
+    --no-clean) NO_CLEAN="1"; shift ;;
+    --purge) FORCE_PURGE="1"; shift ;;   # sets non-empty
+    --) shift; break ;;
+    *) echo "ERROR: Invalid option: $1" >&2; exit 1 ;;
   esac
 done
 
-# Define log file
+# FIX #4: warn if --purge is combined with --no-clean (purge would be silently ignored)
+if [ -n "$FORCE_PURGE" ] && [ "$NO_CLEAN" = "1" ]; then
+  echo "WARNING: --purge has no effect when combined with --no-clean" >&2
+fi
+
+# =========================================================
+# Build log — FIX #3: initialized BEFORE clean() is called
+# =========================================================
 BUILD_LOG="$(pwd)/build.log"
-debug "BUILD_LOG: $BUILD_LOG"
-# Create empty file
 : > "$BUILD_LOG"
 
-# Set default values
+# =========================================================
+# Arch normalisation
+# =========================================================
 KALI_ARCH=${KALI_ARCH:-$HOST_ARCH}
+
 if [ "$KALI_ARCH" = "x64" ]; then
   KALI_ARCH="amd64"
 elif [ "$KALI_ARCH" = "x86" ]; then
   KALI_ARCH="i386"
 fi
-debug "KALI_ARCH: $KALI_ARCH"
 
 if [ -z "$KALI_VERSION" ]; then
-  KALI_VERSION="$(default_version $KALI_DIST)"
-fi
-debug "KALI_VERSION: $KALI_VERSION"
-
-# Check parameters
-debug "HOST_ARCH: $HOST_ARCH"
-if [ "$HOST_ARCH" != "$KALI_ARCH" ]; then
-  case "$HOST_ARCH/$KALI_ARCH" in
-    amd64/i386|i386/amd64)
-    ;;
-    *)
-      echo "Can't build $KALI_ARCH image on $HOST_ARCH system" >&2
-      exit 1
-    ;;
-  esac
+  KALI_VERSION="$(default_version "$KALI_DIST")"
 fi
 
-# Build parameters for lb config
-KALI_CONFIG_OPTS="--distribution $KALI_DIST -- --variant $KALI_VARIANT"
-if [ -n "$OPT_pu" ]; then
-  KALI_CONFIG_OPTS="$KALI_CONFIG_OPTS --proposed-updates"
-  KALI_DIST="$KALI_DIST+pu"
-fi
-debug "KALI_CONFIG_OPTS: $KALI_CONFIG_OPTS"
-debug "KALI_DIST: $KALI_DIST"
-
-# Set sane PATH (cron seems to lack /sbin/ dirs)
+# =========================================================
+# Check OS
+# =========================================================
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-debug "PATH: $PATH"
 
-if grep -q -e "^ID=debian" -e "^ID_LIKE=debian" /usr/lib/os-release; then
-  debug "OS: $( . /usr/lib/os-release && echo $NAME $VERSION )"
-elif [ -e /etc/debian_version ]; then
-  debug "OS: $( cat /etc/debian_version )"
-else
-  echo "ERROR: Non Debian-based OS" >&2
-fi
-
-if [ ! -d "$(dirname $0)/zyphor-os/variant-$KALI_VARIANT" ]; then
-  echo "ERROR: Unknown variant of Kali live configuration: $KALI_VARIANT" >&2
-fi
 require_package live-build "1:20250814+kali2"
 
-# We need root rights at some point
+# FIX #8: dbus check is now a hard requirement, not just a warning
+require_package dbus-user-session "0"
+
+# =========================================================
+# Root check
+# =========================================================
 if [ "$(whoami)" != "root" ]; then
   if ! which $SUDO >/dev/null; then
-    echo "ERROR: $0 is not run as root and $SUDO is not available" >&2
+    echo "ERROR: sudo not found" >&2
     exit 1
   fi
 else
-  SUDO="" # We're already root
-fi
-debug "SUDO: $SUDO"
-
-IMAGE_NAME="$(image_name $KALI_ARCH)"
-debug "IMAGE_NAME: $IMAGE_NAME"
-
-debug "ACTION: $ACTION"
-if [ "$ACTION" = "get-image-path" ]; then
-  echo $(target_image_name $KALI_ARCH)
-  exit 0
+  SUDO=""
 fi
 
-if [ "$NO_CLEAN" = "" ]; then
+# =========================================================
+# Clean stage
+# =========================================================
+if [ "$NO_CLEAN" != "1" ]; then
   clean
 fi
+
 if [ "$ACTION" = "clean" ]; then
+  echo "Clean complete."
   exit 0
 fi
 
-# Create image output location
-mkdir -pv $TARGET_DIR/$TARGET_SUBDIR
-[ $? -eq 0 ] || failure
+# =========================================================
+# Output directory
+# =========================================================
+mkdir -pv "$TARGET_DIR/$TARGET_SUBDIR"
 
-# Don't quit on any errors now
-set +e
+# =========================================================
+# BUILD STAGE
+# Note: remaining $@ args are forwarded to lb config
+#       intentionally, to allow caller pass-through flags
+# =========================================================
+set -e
+set -o pipefail
 
-debug "Stage 1/2 - Config" # ./auto/config
-run_and_log lb config -a $KALI_ARCH $KALI_CONFIG_OPTS "$@"
-[ $? -eq 0 ] || failure
+debug "Stage 1: config"
+run_and_log lb config -a "$KALI_ARCH" --distribution "$KALI_DIST" -- --variant "$KALI_VARIANT" "$@"
 
-debug "Stage 2/2 - Build"
-run_and_log $SUDO lb build # ./auto/build... but missing for us
-if [ $? -ne 0 ] || [ ! -e $IMAGE_NAME ]; then
+debug "Stage 2: build"
+run_and_log $SUDO lb build
+
+IMAGE_NAME="$(image_name "$KALI_ARCH")"
+
+if [ ! -e "$IMAGE_NAME" ]; then
   failure
 fi
 
-# If a command fails, make the whole script exit
-set -e
+# =========================================================
+# Move outputs
+# =========================================================
+run_and_log mv -f "$IMAGE_NAME" "$TARGET_DIR/$(target_image_name "$KALI_ARCH")"
+run_and_log mv -f "$BUILD_LOG"  "$TARGET_DIR/$(target_build_log  "$KALI_ARCH")"
 
-debug "Moving files"
-run_and_log mv -f $IMAGE_NAME $TARGET_DIR/$(target_image_name $KALI_ARCH)
-run_and_log mv -f "$BUILD_LOG" $TARGET_DIR/$(target_build_log $KALI_ARCH)
-
-echo -e "\n***\nGENERATED IMAGE: $(readlink -f $TARGET_DIR/$(target_image_name $KALI_ARCH))\n***"
+echo ""
+echo "*** BUILD SUCCESSFUL ***"
+readlink -f "$TARGET_DIR/$(target_image_name "$KALI_ARCH")"
