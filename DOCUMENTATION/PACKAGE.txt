@@ -24,6 +24,9 @@ List of Packages Develop Under the Zyphor Project
 
 - os-updates        (zyphor-os-updates)
     Small OS updates (new feature, patch release and others...)
+    * fastfetch-config-1
+    * grub-screensaver-1
+    * zyphor-display-mac-v1
 
 - shell             (zyshell)
     Zyphor OS default shell. Pre-installed and pre-configured after new installed OS, update and upgrade.
