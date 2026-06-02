@@ -1,0 +1,27 @@
+=================
+Versioning Scheme
+=================
+
+vX.X.X-YYY.MM.DD-rx
+
+=============
+Configuration
+=============
+
+Zyphor OS internal configuration is located in:
+
+os-config/
+
+================================================
+Bootloader, Installer, Live Mode Config, Preseed
+================================================
+
+os-config/common
+
+========================================================
+Variant XFCE Desktop Environment Userspace Configuration
+========================================================
+
+os-config/variant-xfce
+
+Command: ./build.sh --variant xfce --verbose
