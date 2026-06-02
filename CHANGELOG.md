@@ -1,3 +1,22 @@
+# [1.11.0](https://github.com/markjasonespelita/zyphor_os/compare/v1.10.0...v1.11.0) (2026-06-02)
+
+
+### Features
+
+* added DEBUGGING docs. ([2da6e6e](https://github.com/markjasonespelita/zyphor_os/commit/2da6e6ea0a9b9b6e02b92df3c799d314ab8c54aa))
+* added default and custom wallpapers of zyphor-os. ([f4d6ac6](https://github.com/markjasonespelita/zyphor_os/commit/f4d6ac628e5cada79227ffdfd60f19596aeb127d))
+* added default shell codebase in the root. ([43882c4](https://github.com/markjasonespelita/zyphor_os/commit/43882c455dca89df1575e312f6d0d459049ad5e1))
+* added DOCUMENTATION PACKAGE docs. ([f7be3d7](https://github.com/markjasonespelita/zyphor_os/commit/f7be3d7a41641d61b0bc3bd8241062a01a9a9551))
+* added kernel folder - home of the linux kernel for experimentation. ([66c6133](https://github.com/markjasonespelita/zyphor_os/commit/66c6133bc5a2634f382a529ab73dee4888536224))
+* added OPERATING-SYSTEM docs. ([7401602](https://github.com/markjasonespelita/zyphor_os/commit/74016022dd0fbcfb8c6a362f00238b3335108d6b))
+* added updates folder for os new packages, patches and updates. ([250b6a7](https://github.com/markjasonespelita/zyphor_os/commit/250b6a7463143cdfa52db24dc7dbef230ab396ca))
+* include os-release folder on the codebase root. ([6460412](https://github.com/markjasonespelita/zyphor_os/commit/6460412102cfe71fea1b190034380d28abbc58f8))
+* include os-updates folder on the codebase root. ([6935f9c](https://github.com/markjasonespelita/zyphor_os/commit/6935f9c492ded558374a87c9d31028643cd0ec59))
+* included playground directory for package testing, debugging and building. ([1b13117](https://github.com/markjasonespelita/zyphor_os/commit/1b1311738b15f67730edb870d68cec29dbd8adcf))
+* removed old files and configurations. ([05fba70](https://github.com/markjasonespelita/zyphor_os/commit/05fba705f2dc0c5b28d413c4d6ccbb9e189acd8f))
+* renamed zyphor-os-config into os-config ([b9a4931](https://github.com/markjasonespelita/zyphor_os/commit/b9a4931731c01388431efbd787a3c3665e659889))
+* updated zyshell executable. ([7b10715](https://github.com/markjasonespelita/zyphor_os/commit/7b107155338541a2b7050a8a700b8bc6f2f16a6d))
+
 # [1.10.0](https://github.com/markjasonespelita/zyphor_os/compare/v1.9.0...v1.10.0) (2026-05-22)
 
 
