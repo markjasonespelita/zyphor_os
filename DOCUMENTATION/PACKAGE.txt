@@ -1,0 +1,37 @@
+=================
+Versioning Scheme
+=================
+
+vX.X.X-ux
+
+Required Changes
+- os-release/DEBIAN/control
+- os-release/DEBIAN/postinst
+- updates/DEBIAN/control (if new default package was introduced).
+
+=================================================
+List of Packages Develop Under the Zyphor Project
+=================================================
+
+- cli               (zyphor-cli)
+    CLI Abstraction Layer.
+
+- command-center    (zyphor-command-center)
+    CLI Abstraction Layer GUI, runs on top of bash or zsh.
+
+- os-release        (zyphor-os-release)
+    OS release file located in /usr/lib/os-release -> /etc/os-release.
+
+- os-updates        (zyphor-os-updates)
+    Small OS updates (new feature, patch release and others...)
+
+- shell             (zyshell)
+    Zyphor OS default shell. Pre-installed and pre-configured after new installed OS, update and upgrade.
+
+- updates           (zyphor-updates)
+    Dependencies, default applications and configurations in every new release.
+
+- wallpapers
+    - zyphor-wallpapers-default-2026-2027
+    - zyphor-wallpapers-nature
+    - zyphor-wallpapers-pragmata
