@@ -1,4 +1,4 @@
-![Zyphor Logo](zyphor-os-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/zyphor-full.png)
+![Zyphor Logo](os-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/zyphor-full.png)
 
 ## 📚 Installer
 
