@@ -1,0 +1,27 @@
+// helperCommand.c
+helperCommand(char *_command, char *_arguments, int size)
+
+// helperInput.c
+helperInt()
+
+helperFloat()
+
+helperDouble()
+
+// helperMath.c
+square(int number)
+
+cube(int number)
+
+// helperReadFile.c
+helperReadFile(char *filename)
+
+// helperString.c
+helperString(char _string[], int size)
+
+// helperValidation.c
+isEmpty(char str[])
+
+isPositive(int number)
+
+isNegative(int number)
