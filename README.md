@@ -34,89 +34,18 @@ Zyphor Repo - https://github.com/markjasonespelita/zyphor_repo
 
 ---
 
-# Contributors
+## Contributors
 
 Contributors are not limited to software developers. Some collaborators contributed through ideas, testing, security assessments, bug reporting, graphic design, documentation, feedback, and community support. Their efforts have helped shape and improve Zyphor OS, and their contributions are sincerely appreciated.
 
-<table align="center">
-<tr>
-<td colspan="4" align="center">
-<a href="https://github.com/markjasonespelita">
-<img src="https://github.com/markjasonespelita.png?size=90" width="90">
-<br>
-<b>Mark Jason Espelita</b>
-</a>
-<br>
-Zyphor OS Creator and
-<br>
-Lead Maintainer
-<br>
-(Host)
-</td>
-</tr>
-
-<tr>
-
-<td align="center">
-<a href="https://github.com/mjespelita">
-<img src="https://github.com/mjespelita.png?size=90" width="90">
-<br>
-<b>Mark Jason Espelita</b>
-</a>
-<br>
-Maintainer's 2nd Account
-</td>
-
-<td align="center">
-<a href="https://github.com/mjfrontendservices">
-<img src="https://github.com/mjfrontendservices.png?size=90" width="90">
-<br>
-<b>Mark Jason Espelita</b>
-</a>
-<br>
-Maintainer's 3rd Account
-</td>
-
-
-<td align="center">
-<a href="https://github.com/semantic-release-bot">
-<img src="https://github.com/semantic-release-bot.png?size=90" width="90">
-<br>
-<b>Semantic Release Bot</b>
-</a>
-<br>
-CI/CD Automated Bot
-</td>
-
-<td align="center">
-<a href="https://github.com/fen-lowcode">
-<img src="https://github.com/fen-lowcode.png?size=90" width="90">
-<br>
-<b>Dan Stephen Blanco</b>
-</a>
-<br>
-Security Tester
-</td>
-
-</tr>
-
-<td align="center">
-<a href="https://github.com/NicoleHonradoErvas">
-<img src="https://github.com/NicoleHonradoErvas.png?size=90" width="90">
-<br>
-<b>Nicole Honrado Ervas</b>
-</a>
-<br>
-Graphic Artist
-</td>
-
-<tr>
-
-
-
-</tr>
-</table>
-
+|  | Name | Role |
+|:---:|:---|:---|
+| <img src="https://github.com/markjasonespelita.png?size=60" width="60" height="60"> | [Mark Jason Espelita](https://github.com/markjasonespelita) | Zyphor OS Creator and Lead Maintainer (Host) |
+| <img src="https://github.com/mjespelita.png?size=60" width="60" height="60"> | [Mark Jason Espelita](https://github.com/mjespelita) | Maintainer's 2nd Account |
+| <img src="https://github.com/mjfrontendservices.png?size=60" width="60" height="60"> | [Mark Jason Espelita](https://github.com/mjfrontendservices) | Maintainer's 3rd Account |
+| <img src="https://github.com/semantic-release-bot.png?size=60" width="60" height="60"> | [Semantic Release Bot](https://github.com/semantic-release-bot) | CI/CD Automated Bot |
+| <img src="https://github.com/fen-lowcode.png?size=60" width="60" height="60"> | [Dan Stephen Blanco](https://github.com/fen-lowcode) | Security Tester |
+| <img src="https://github.com/NicoleHonradoErvas.png?size=60" width="60" height="60"> | [Nicole Honrado Ervas](https://github.com/NicoleHonradoErvas) | Graphic Artist |
 ---
 
 # Introduction
