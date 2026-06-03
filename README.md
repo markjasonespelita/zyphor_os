@@ -104,10 +104,10 @@ Security Tester
 <a href="https://github.com/NicoleHonradoErvas">
 <img src="https://github.com/NicoleHonradoErvas.png?size=90" width="90">
 <br>
-<b>Dan Stephen Blanco</b>
+<b>Nicole Honrado Ervas</b>
 </a>
 <br>
-Security Tester
+Graphic Artist
 </td>
 
 <tr>
