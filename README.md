@@ -40,7 +40,7 @@ Contributors are not limited to software developers. Some collaborators contribu
 
 <table align="center">
 <tr>
-<td colspan="3" align="center">
+<td colspan="4" align="center">
 <a href="https://github.com/markjasonespelita">
 <img src="https://github.com/markjasonespelita.png?size=90" width="90">
 <br>
