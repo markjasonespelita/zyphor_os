@@ -38,7 +38,9 @@ Zyphor Repo - https://github.com/markjasonespelita/zyphor_repo
 
 Contributors are not limited to software developers. Some collaborators contributed through ideas, testing, security assessments, bug reporting, graphic design, documentation, feedback, and community support. Their efforts have helped shape and improve Zyphor OS, and their contributions are sincerely appreciated.
 
-|  | Name | Role |
+---
+
+| Avatar | Name | Role |
 |:---:|:---|:---|
 | <img src="https://github.com/markjasonespelita.png?size=60" width="60" height="60"> | [Mark Jason Espelita](https://github.com/markjasonespelita) | Zyphor OS Creator and Lead Maintainer (Host) |
 | <img src="https://github.com/mjespelita.png?size=60" width="60" height="60"> | [Mark Jason Espelita](https://github.com/mjespelita) | Maintainer's 2nd Account |
@@ -46,6 +48,7 @@ Contributors are not limited to software developers. Some collaborators contribu
 | <img src="https://github.com/semantic-release-bot.png?size=60" width="60" height="60"> | [Semantic Release Bot](https://github.com/semantic-release-bot) | CI/CD Automated Bot |
 | <img src="https://github.com/fen-lowcode.png?size=60" width="60" height="60"> | [Dan Stephen Blanco](https://github.com/fen-lowcode) | Security Tester |
 | <img src="https://github.com/NicoleHonradoErvas.png?size=60" width="60" height="60"> | [Nicole Honrado Ervas](https://github.com/NicoleHonradoErvas) | Graphic Artist |
+
 ---
 
 # Introduction
