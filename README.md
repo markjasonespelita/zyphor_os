@@ -88,6 +88,16 @@ Maintainer's 3rd Account
 CI/CD Automated Bot
 </td>
 
+<td align="center">
+<a href="https://github.com/fen-lowcode">
+<img src="https://github.com/fen-lowcode.png?size=90" width="90">
+<br>
+<b>Dan Stephen Blanco</b>
+</a>
+<br>
+Security Tester
+</td>
+
 </tr>
 </table>
 
