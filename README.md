@@ -34,7 +34,64 @@ Zyphor Repo - https://github.com/markjasonespelita/zyphor_repo
 
 ---
 
+# Contributors
 
+Contributors are not limited to software developers. Some collaborators contributed through ideas, testing, security assessments, bug reporting, graphic design, documentation, feedback, and community support. Their efforts have helped shape and improve Zyphor OS, and their contributions are sincerely appreciated.
+
+<table align="center">
+<tr>
+<td colspan="3" align="center">
+<a href="https://github.com/markjasonespelita">
+<img src="https://github.com/markjasonespelita.png?size=90" width="90">
+<br>
+<b>Mark Jason Espelita</b>
+</a>
+<br>
+Zyphor OS Creator and
+<br>
+Lead Maintainer
+<br>
+(Host)
+</td>
+</tr>
+
+<tr>
+
+<td align="center">
+<a href="https://github.com/mjespelita">
+<img src="https://github.com/mjespelita.png?size=90" width="90">
+<br>
+<b>Mark Jason Espelita</b>
+</a>
+<br>
+Maintainer's 2nd Account
+</td>
+
+<td align="center">
+<a href="https://github.com/mjfrontendservices">
+<img src="https://github.com/mjfrontendservices.png?size=90" width="90">
+<br>
+<b>Mark Jason Espelita</b>
+</a>
+<br>
+Maintainer's 3rd Account
+</td>
+
+
+<td align="center">
+<a href="https://github.com/semantic-release-bot">
+<img src="https://github.com/semantic-release-bot.png?size=90" width="90">
+<br>
+<b>Semantic Release Bot</b>
+</a>
+<br>
+CI/CD Automated Bot
+</td>
+
+</tr>
+</table>
+
+---
 
 # Introduction
 
