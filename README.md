@@ -48,6 +48,7 @@ Contributors are not limited to software developers. Some collaborators contribu
 | <img src="https://github.com/semantic-release-bot.png?size=60" width="60" height="60"> | [Semantic Release Bot](https://github.com/semantic-release-bot) | CI/CD Automated Bot |
 | <img src="https://github.com/fen-lowcode.png?size=60" width="60" height="60"> | [Dan Stephen Blanco](https://github.com/fen-lowcode) | Security Tester |
 | <img src="https://github.com/NicoleHonradoErvas.png?size=60" width="60" height="60"> | [Nicole Honrado Ervas](https://github.com/NicoleHonradoErvas) | Graphic Artist |
+| <img src="https://github.com/isojenalyn14.png?size=60" width="60" height="60"> | [Jenalyn Iso](https://github.com/isojenalyn14) | Graphic Artist |
 
 ---
 
