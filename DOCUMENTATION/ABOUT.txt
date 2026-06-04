@@ -1,0 +1,94 @@
+===================
+Zyphor OS Ecosystem
+===================
+
+Zyphor OS is not just a single operating system project.
+It is an ecosystem composed of multiple modular projects,
+each designed to serve a specific purpose while sharing a
+common vision of openness, learning, and maintainability.
+
+This modular approach allows users, developers, educators,
+and system administrators to choose the edition that best
+fits their needs without unnecessary components.
+
+==============
+Zyphor Desktop
+==============
+https://github.com/markjasonespelita/zyphor_os
+
+The Desktop edition is designed for everyday users.
+It provides a complete graphical environment suitable for
+daily computing tasks such as web browsing, software development,
+multimedia consumption, office work, and general productivity.
+
+This edition focuses on usability, accessibility,
+and a user-friendly experience while maintaining the
+flexibility and power of a Linux-based operating system.
+
+=============
+Zyphor Server
+=============
+https://github.com/markjasonespelita/zyphor_server
+
+The Server edition is intended for servers, 
+cloud deployments, virtual machines, and infrastructure
+environments. It is delivered without a graphical user
+interface (GUI) to minimize resource usage and
+maximize performance.
+
+This edition is suitable for hosting websites,
+web applications, databases, APIs, containers,
+and other backend services.
+
+==============
+Zyphor Minimal
+==============
+https://github.com/markjasonespelita/zyphor_minimal
+
+The Minimal edition is designed primarily for learning,
+experimentation, and education. It contains only the essential
+components required to boot and operate the system.
+
+This lightweight environment allows students, hobbyists, and
+aspiring system administrators to better understand Linux fundamentals,
+operating system architecture, package management, shell environments,
+and system customization.
+
+================================
+Zyphor Repository Infrastructure
+================================
+https://github.com/markjasonespelita/zyphor_repo
+
+The Zyphor Repository project serves as the software distribution
+and package hosting platform for the Zyphor ecosystem.
+It hosts packages, updates, patches, and software releases
+that are made available to users.
+
+Repositories are continuously maintained and updated to ensure
+that users receive the latest software improvements, bug fixes,
+and security updates.
+
+================
+A Modular Vision
+================
+
+By separating Zyphor OS into multiple specialized projects,
+the ecosystem remains flexible, maintainable, and scalable.
+Each project can evolve independently while contributing to
+the overall growth of the Zyphor platform.
+
+Together, these components form the Zyphor OS ecosystem—a
+community-driven initiative focused on learning, innovation,
+open-source collaboration, and long-term sustainability.
+
+====================
+Zyphor OS Philosophy
+====================
+
+Read our philosophy here.
+
+https://github.com/markjasonespelita/zyphor_os/blob/master/DOCUMENTATION/PHILOSOPHY.txt
+
+Download our philosophy doc.
+
+https://github.com/markjasonespelita/zyphor_os/blob/master/DOCUMENTATION/ZyphorOSPhilosophy.docx
