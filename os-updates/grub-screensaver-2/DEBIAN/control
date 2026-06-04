@@ -1,8 +1,0 @@
-Package: grub-screensaver-2
-Version: 1.0.0
-Section: utils
-Priority: optional
-Architecture: all
-Depends: bash
-Maintainer: Mark Jason P. Espelita
-Description: Zyphor OS Grub Screensaver
