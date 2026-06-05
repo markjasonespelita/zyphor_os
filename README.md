@@ -19,6 +19,7 @@ zyphor help
 **Facebook Page:** https://www.facebook.com/profile.php?id=61573426796629  
 **Email:** markjasonespelita@gmail.com  
 **Contact:** 09978972884 | 09203454006  
+**Our Philosophy:** [ZyphorOSPhilosophy.docx](https://github.com/markjasonespelita/zyphor_os/blob/master/DOCUMENTATION/ZyphorOSPhilosophy.docx)
 **Date Created:** March 30, 2026
 
 ---
