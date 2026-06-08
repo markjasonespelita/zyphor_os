@@ -1,0 +1,8 @@
+Package: zyphor-wallpapers-jenalyn
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: bash
+Maintainer: Jenalyn Iso
+Description: Zyphor OS wallpapers-jenalyn
