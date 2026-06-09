@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+# set file permission
+find /usr/share/zyphor-command-center -type f -exec chmod 555 {} +
+
+# executable file
+chmod 555 /usr/local/bin/zyphor-command-center
+
+# application
+chmod 555 /usr/share/applications/zyphor-command-center.desktop
+
+exit 0
