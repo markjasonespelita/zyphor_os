@@ -90,21 +90,15 @@ void redraw_line(const char *prompt_str, const char *buf)
     int buf_len    = (int)strlen(buf);
     int total_len  = prompt_vis + buf_len;
 
-    // Roll back up by whatever row count we printed in the last loop iteration
     if (last_drawn_rows > 0) {
         printf("\033[%dA", last_drawn_rows);
     }
 
-    // Carriage return, then clean out old artifacts all the way down to the bottom cell
     printf("\r\033[J");
-
-    // Output clean baseline state
     printf("%s%s", prompt_str, buf);
 
-    // Save the row snapshot index for our next loop step rewind
     last_drawn_rows = total_len / cols;
 
-    // Fix edge-cases on lines exactly hitting terminal column boundary sizes
     if (total_len > 0 && total_len % cols == 0) {
         printf(" \b");
     }
@@ -116,7 +110,7 @@ void reposition_cursor(const char *prompt_str, int cursor, int buf_len)
 {
     int cols       = term_width();
     int prompt_vis = visible_len(prompt_str);
-    
+
     int total_len  = prompt_vis + buf_len;
     int target_pos = prompt_vis + cursor;
 
@@ -124,13 +118,11 @@ void reposition_cursor(const char *prompt_str, int cursor, int buf_len)
     int target_row = target_pos / cols;
     int target_col = target_pos % cols;
 
-    // Move backward vertically from the lowest text row boundary up to our specific destination line
     int move_up = total_rows - target_row;
     if (move_up > 0) {
         printf("\033[%dA", move_up);
     }
 
-    // Snap cursor layout across to standard left margin, then skip cleanly forward
     printf("\r");
     if (target_col > 0) {
         printf("\033[%dC", target_col);
@@ -220,14 +212,6 @@ char *build_prompt(void)
     return buf;
 }
 
-void show_prompt(void)
-{
-    char *p = build_prompt();
-    fputs(p, stdout);
-    fflush(stdout);
-    free(p);
-}
-
 // ── Line reader with arrow-key history ───────────────────────────────────────
 int read_line(char *out)
 {
@@ -238,10 +222,9 @@ int read_line(char *out)
     char  saved[BUFFER_SIZE] = {0};
 
     char *prompt = build_prompt();
-    
-    // Clear out persistent tracker coordinates before writing input strings
+
     last_drawn_rows = 0;
-    
+
     fputs(prompt, stdout);
     fflush(stdout);
 
@@ -365,7 +348,7 @@ void free_expanded(void)
     expanded_count = 0;
 }
 
-// FIX: Quote-aware argument parsing to prevent splitting commit messages
+// Quote-aware argument parsing to prevent splitting quoted strings.
 void parse_command(char *input, char *args[])
 {
     free_expanded();
@@ -374,38 +357,24 @@ void parse_command(char *input, char *args[])
     char *p = input;
 
     while (*p != '\0' && i < MAX_ARGS - 1) {
-        // Skip leading whitespace
-        while (*p == ' ' || *p == '\t' || *p == '\n') {
+        while (*p == ' ' || *p == '\t' || *p == '\n')
             p++;
-        }
         if (*p == '\0') break;
 
         char *token_start;
-        // Check if the token is quoted
         if (*p == '"') {
-            p++; // Skip the opening quote
+            p++;
             token_start = p;
-            // Find the closing quote or end of string
-            while (*p != '\0' && *p != '"') {
+            while (*p != '\0' && *p != '"')
                 p++;
-            }
-            if (*p == '"') {
-                *p = '\0'; // Terminate the token at the closing quote
-                p++;       // Move past the closing quote
-            }
+            if (*p == '"') { *p = '\0'; p++; }
         } else {
-            // Unquoted token: find the next whitespace
             token_start = p;
-            while (*p != '\0' && *p != ' ' && *p != '\t' && *p != '\n') {
+            while (*p != '\0' && *p != ' ' && *p != '\t' && *p != '\n')
                 p++;
-            }
-            if (*p != '\0') {
-                *p = '\0'; // Terminate the unquoted token
-                p++;
-            }
+            if (*p != '\0') { *p = '\0'; p++; }
         }
 
-        // Expand tilde and wildcards for this token
         char *expanded = expand_tilde(token_start);
         glob_t g;
         int ret = glob(expanded, GLOB_NOCHECK | GLOB_TILDE, NULL, &g);
@@ -425,11 +394,11 @@ void parse_command(char *input, char *args[])
     args[i] = NULL;
 }
 
-// ── I/O Redirection parser ────────────────────────────────────────────────────
+// ── I/O Redirection ───────────────────────────────────────────────────────────
 typedef struct {
-    char *in_file;      // < filename  (NULL if none)
-    char *out_file;     // > or >> filename  (NULL if none)
-    int   append;       // 1 if >>, 0 if >
+    char *in_file;
+    char *out_file;
+    int   append;
 } Redirection;
 
 void free_redirection(Redirection *r)
@@ -472,11 +441,11 @@ void parse_redirection(const char *segment, Redirection *r, char *clean)
             char *inp = strchr(tok, '<');
 
             char *op     = NULL;
-            int   optype = 0; 
+            int   optype = 0;
 
-            if (dbl)                          { op = dbl; optype = 1; }
-            if (sng && sng != dbl && (!op || sng < op)) { op = sng; optype = 2; }
-            if (inp && (!op || inp < op))     { op = inp; optype = 3; }
+            if (dbl)                                          { op = dbl; optype = 1; }
+            if (sng && sng != dbl && (!op || sng < op))      { op = sng; optype = 2; }
+            if (inp && (!op || inp < op))                     { op = inp; optype = 3; }
 
             if (op) {
                 if (op > tok) {
@@ -489,13 +458,12 @@ void parse_redirection(const char *segment, Redirection *r, char *clean)
                 }
                 int oplen = (optype == 1) ? 2 : 1;
                 char *filename = op + oplen;
-                if (*filename == '\0') {
+                if (*filename == '\0')
                     filename = strtok(NULL, " \t");
-                }
                 if (filename && *filename != '\0') {
-                    if (optype == 1) { free(r->out_file); r->out_file = strdup(filename); r->append = 1; }
+                    if      (optype == 1) { free(r->out_file); r->out_file = strdup(filename); r->append = 1; }
                     else if (optype == 2) { free(r->out_file); r->out_file = strdup(filename); r->append = 0; }
-                    else { free(r->in_file);  r->in_file  = strdup(filename); }
+                    else                  { free(r->in_file);  r->in_file  = strdup(filename); }
                 }
             } else {
                 if (clean[0]) strncat(clean, " ", BUFFER_SIZE - strlen(clean) - 1);
@@ -522,6 +490,19 @@ int apply_redirection(const Redirection *r)
         close(fd);
     }
     return 0;
+}
+
+// ── ls color injection ────────────────────────────────────────────────────────
+// Rewrites args in-place to insert --color=always after "ls".
+// colored must be at least MAX_ARGS + 1 in size.
+void inject_ls_color(char *args[], char *colored[])
+{
+    colored[0] = "ls";
+    colored[1] = "--color=always";
+    int j = 2;
+    for (int k = 1; args[k] != NULL && j < MAX_ARGS; k++, j++)
+        colored[j] = args[k];
+    colored[j] = NULL;
 }
 
 // ── OS screen ─────────────────────────────────────────────────────────────────
@@ -574,10 +555,18 @@ int execute_command_redir(char *args[], const Redirection *r)
         return 0;
     }
 
+    // Resolve the actual argv to execute (inject --color=always for ls).
+    char *exec_args[MAX_ARGS + 1];
+    char **argv = args;
+    if (strcmp(args[0], "ls") == 0) {
+        inject_ls_color(args, exec_args);
+        argv = exec_args;
+    }
+
     pid_t pid = fork();
     if (pid == 0) {
         if (apply_redirection(r) < 0) _exit(1);
-        execvp(args[0], args);
+        execvp(argv[0], argv);
         perror("zyshell");
         _exit(127);
     } else if (pid > 0) {
@@ -593,7 +582,7 @@ int execute_command_redir(char *args[], const Redirection *r)
 // ── Pipe execution ────────────────────────────────────────────────────────────
 int execute_pipeline(const char *segment)
 {
-    char  buf[BUFFER_SIZE];
+    char buf[BUFFER_SIZE];
     strncpy(buf, segment, BUFFER_SIZE - 1);
     buf[BUFFER_SIZE - 1] = '\0';
 
@@ -620,7 +609,6 @@ int execute_pipeline(const char *segment)
         Redirection r;
         char clean[BUFFER_SIZE];
         parse_redirection(stages[0], &r, clean);
-
         char *args[MAX_ARGS];
         parse_command(clean, args);
         int status = execute_command_redir(args, &r);
@@ -628,8 +616,8 @@ int execute_pipeline(const char *segment)
         return status;
     }
 
-    int prev_fd     = -1;
-    pid_t last_pid  = -1;
+    int   prev_fd  = -1;
+    pid_t last_pid = -1;
 
     for (int i = 0; i < nstages; i++) {
         int pipefd[2] = {-1, -1};
@@ -658,6 +646,14 @@ int execute_pipeline(const char *segment)
             continue;
         }
 
+        // Resolve argv (inject --color=always for ls).
+        char *exec_args[MAX_ARGS + 1];
+        char **argv = args;
+        if (strcmp(args[0], "ls") == 0) {
+            inject_ls_color(args, exec_args);
+            argv = exec_args;
+        }
+
         pid_t pid = fork();
         if (pid == 0) {
             if (prev_fd != -1 && r.in_file == NULL) {
@@ -678,7 +674,7 @@ int execute_pipeline(const char *segment)
 
             if (apply_redirection(&r) < 0) _exit(1);
 
-            execvp(args[0], args);
+            execvp(argv[0], argv);
             perror("zyshell");
             _exit(1);
         } else if (pid < 0) {
@@ -714,7 +710,7 @@ int run_chain(const char *input)
     strncpy(buf, input, BUFFER_SIZE - 1);
     buf[BUFFER_SIZE - 1] = '\0';
 
-    int  last_status = 0;
+    int   last_status = 0;
     char *p           = buf;
 
     while (*p != '\0') {
@@ -726,16 +722,13 @@ int run_chain(const char *input)
         char *semi_op = NULL;
 
         for (char *q = p; *q != '\0'; q++) {
-            if (!and_op && q[0] == '&' && q[1] == '&')
-                and_op = q;
-            if (!or_op  && q[0] == '|' && q[1] == '|')
-                or_op  = q;
-            if (!semi_op && q[0] == ';')
-                semi_op = q;
+            if (!and_op  && q[0] == '&' && q[1] == '&') and_op  = q;
+            if (!or_op   && q[0] == '|' && q[1] == '|') or_op   = q;
+            if (!semi_op && q[0] == ';')                 semi_op = q;
         }
 
-        char *op     = NULL;
-        int   op_type = 0; 
+        char *op      = NULL;
+        int   op_type = 0;
 
         if (and_op)                             { op = and_op;  op_type = 1; }
         if (or_op   && (!op || or_op   < op))   { op = or_op;   op_type = 2; }
