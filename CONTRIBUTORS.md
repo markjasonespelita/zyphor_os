@@ -28,3 +28,16 @@ Contributions
 - Quality assurance and testing
 
 ---
+
+**Dan Stephen B. Blanco**  
+https://github.com/fen-lowcode  
+**Security Tester | Reverse Engineering Specialist**
+
+### Contributions
+
+- Conducted security testing and analysis of Zyphor CLI components.
+- Identified and responsibly reported a privilege escalation vulnerability within Zyphor CLI.
+- Performed reverse engineering and technical assessments to improve system security.
+- Provided security recommendations that contributed to the hardening of Zyphor OS tools and infrastructure.
+
+---

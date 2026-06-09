@@ -1,0 +1,51 @@
+#!/bin/sh
+set -e
+
+# set file permission
+
+chmod 555 /usr/lib/zyphor/build/package
+chmod 555 /usr/lib/zyphor/build/repo
+
+chmod 555 /usr/lib/zyphor/core/error
+chmod 555 /usr/lib/zyphor/core/help
+
+chmod 555 /usr/lib/zyphor/doctor/fix
+chmod 555 /usr/lib/zyphor/doctor/report
+chmod 555 /usr/lib/zyphor/doctor/scan
+
+chmod 555 /usr/lib/zyphor/ftp/download
+chmod 555 /usr/lib/zyphor/ftp/list
+chmod 555 /usr/lib/zyphor/ftp/upload
+
+chmod 555 /usr/lib/zyphor/pkg/cache
+chmod 555 /usr/lib/zyphor/pkg/install
+chmod 555 /usr/lib/zyphor/pkg/list
+chmod 555 /usr/lib/zyphor/pkg/remove
+chmod 555 /usr/lib/zyphor/pkg/search
+
+chmod 555 /usr/lib/zyphor/service/list
+chmod 555 /usr/lib/zyphor/service/restart
+chmod 555 /usr/lib/zyphor/service/start
+chmod 555 /usr/lib/zyphor/service/status
+chmod 555 /usr/lib/zyphor/service/stop
+
+chmod 555 /usr/lib/zyphor/setup/dev
+chmod 555 /usr/lib/zyphor/setup/init
+chmod 555 /usr/lib/zyphor/setup/pentest
+
+chmod 555 /usr/lib/zyphor/smb/disk-list
+chmod 555 /usr/lib/zyphor/smb/disk-mount
+chmod 555 /usr/lib/zyphor/smb/ensure
+chmod 555 /usr/lib/zyphor/smb/list
+chmod 555 /usr/lib/zyphor/smb/mount
+
+chmod 555 /usr/lib/zyphor/ssh/cmd
+chmod 555 /usr/lib/zyphor/ssh/connect
+
+chmod 555 /usr/lib/zyphor/system/clean
+chmod 555 /usr/lib/zyphor/system/info
+chmod 555 /usr/lib/zyphor/system/upgrade
+
+chmod 555 /usr/local/bin/zyphor
+
+exit 0
