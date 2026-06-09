@@ -5,10 +5,13 @@ This will be updated daily.
 - restday
 
 2026-06-08
-- re-archive wallpapers-jenalyn-2026 for review
-- onboarding of grapphic designer - Jenalyn Iso
-- onboarding of security tester - Dan
-- meeting with zyphor cli vulnerability
+- Re-archived the wallpapers-jenalyn-2026 package for review and evaluation.
+- Completed contributor onboarding for Graphic Designer Jenalyn Iso.
+- Completed contributor onboarding for Security Tester Dan Stephen B. Blanco.
+- Conducted a security review meeting regarding a reported Zyphor CLI vulnerability.
 
-2026-06-08
-- 
+2026-06-09
+- Resolved a privilege escalation vulnerability affecting Zyphor CLI
+  by applying stricter file permissions (555) to protected executable components by default.
+- Resolved a privilege escalation vulnerability affecting Zyphor Command Center
+  by applying stricter file permissions (555) to protected executable components by default.
