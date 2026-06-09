@@ -46,4 +46,6 @@ chmod 555 /usr/lib/zyphor/system/clean
 chmod 555 /usr/lib/zyphor/system/info
 chmod 555 /usr/lib/zyphor/system/upgrade
 
+chmod 555 /usr/local/bin/zyphor
+
 exit 0
