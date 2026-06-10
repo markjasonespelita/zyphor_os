@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Zyphor What's New
+Exec=/usr/bin/zyphor-whats-new
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,8 @@
+Package: zyphor-whats-new
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: zsh
+Maintainer: Mark Jason P. Espelita
+Description: Zyphor OS Whats New
