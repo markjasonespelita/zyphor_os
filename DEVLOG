@@ -16,3 +16,6 @@ This will be updated daily.
 - Resolved a privilege escalation vulnerability affecting Zyphor Command Center
   by applying stricter file permissions (555) to protected executable components by default.
 - created a video tutorial on how to install Zyphor OS. Video link is included in README.md file.
+
+2026-06-10
+- 
