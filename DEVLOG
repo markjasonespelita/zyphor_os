@@ -19,3 +19,4 @@ This will be updated daily.
 
 2026-06-10
 - submission and checking of wallpapers from graphic designers.
+- patched zyphor-cli path, added symbolic link from /usr/local/bin/zyphor to /usr/bin/zyphor
