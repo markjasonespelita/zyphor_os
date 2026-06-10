@@ -1,0 +1,8 @@
+Package: zyphor-wallpapers-nicole
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: bash
+Maintainer: Nicole Ervas and Zyphor OS Team
+Description: Zyphor OS wallpapers-nicole
