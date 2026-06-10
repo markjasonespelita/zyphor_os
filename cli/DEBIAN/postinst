@@ -48,4 +48,8 @@ chmod 555 /usr/lib/zyphor/system/upgrade
 
 chmod 555 /usr/local/bin/zyphor
 
+# create symlink to /usr/bin folder
+
+sudo ln -sf /usr/local/bin/zyphor /usr/bin/zyphor
+
 exit 0
