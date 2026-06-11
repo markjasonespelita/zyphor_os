@@ -1,0 +1,54 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+  echo "Zyphor: Removing wallpaper symlinks..."
+
+  # removing symlinks
+
+  rm -f /usr/share/images/desktop-base/jenalyn-1
+
+  rm -f /usr/share/images/desktop-base/jenalyn-2
+
+  rm -f /usr/share/images/desktop-base/jenalyn-3
+
+  rm -f /usr/share/images/desktop-base/jenalyn-4
+
+  rm -f /usr/share/images/desktop-base/jenalyn-5
+  
+  rm -f /usr/share/images/desktop-base/jenalyn-6
+
+  rm -f /usr/share/images/desktop-base/jenalyn-7
+
+  rm -f /usr/share/backgrounds/jenalyn-1
+
+  rm -f /usr/share/backgrounds/jenalyn-2
+
+  rm -f /usr/share/backgrounds/jenalyn-3
+
+  rm -f /usr/share/backgrounds/jenalyn-4
+
+  rm -f /usr/share/backgrounds/jenalyn-5
+  
+  rm -f /usr/share/backgrounds/jenalyn-6
+
+  rm -f /usr/share/backgrounds/jenalyn-7
+
+  # removing raw files
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-1.png
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-2.png
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-3.png
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-4.png
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-5.png
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-6.png
+
+  rm -f /usr/share/backgrounds/wallpapers-jenalyn/jenalyn-7.png
+
+  echo "Zyphor: Cleanup done."
+fi
