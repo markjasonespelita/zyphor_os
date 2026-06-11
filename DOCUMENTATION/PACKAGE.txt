@@ -7,6 +7,7 @@ vX.X.X-ux
 Required Changes
 - os-release/DEBIAN/control
 - os-release/DEBIAN/postinst
+- whats-new/DEBIAN/control
 - whats-new/usr/share/zyphor-whats-new/release-notes.html
 
 - updates/DEBIAN/control (if new default package was introduced).
@@ -35,6 +36,10 @@ List of Packages Develop Under the Zyphor Project
 
 - updates           (zyphor-updates)
     Dependencies, default applications and configurations in every new release.
+
+- whats-new         (zyphor-whats-new)
+    A lightweight release notes viewer for Zyphor OS that shows system updates
+    and changes in the browser after upgrades.
 
 - wallpapers
     - zyphor-wallpapers-default-2026-2027
