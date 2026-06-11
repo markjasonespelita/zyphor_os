@@ -1,0 +1,41 @@
+#!/bin/bash
+set -e
+
+echo "Zyphor: Applying wallpapers setup..."
+
+TARGET_DIR_DESKTOP_BASE="/usr/share/images/desktop-base"
+TARGET_DIR_BACKGROUNDS="/usr/share/backgrounds"
+SRC_DIR="/usr/share/backgrounds/wallpapers-jenalyn"
+
+mkdir -p "$TARGET_DIR_DESKTOP_BASE"
+
+# safe symlinks (overwrite only if ours)
+ln -sfn "$SRC_DIR/jenalyn-1.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-1"
+
+ln -sfn "$SRC_DIR/jenalyn-2.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-2"
+
+ln -sfn "$SRC_DIR/jenalyn-3.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-3"
+
+ln -sfn "$SRC_DIR/jenalyn-4.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-4"
+
+ln -sfn "$SRC_DIR/jenalyn-5.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-5"
+
+ln -sfn "$SRC_DIR/jenalyn-6.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-6"
+
+ln -sfn "$SRC_DIR/jenalyn-7.png" "$TARGET_DIR_DESKTOP_BASE/jenalyn-7"
+
+ln -sfn "$SRC_DIR/jenalyn-1.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-1"
+
+ln -sfn "$SRC_DIR/jenalyn-2.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-2"
+
+ln -sfn "$SRC_DIR/jenalyn-3.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-3"
+
+ln -sfn "$SRC_DIR/jenalyn-4.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-4"
+
+ln -sfn "$SRC_DIR/jenalyn-5.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-5"
+
+ln -sfn "$SRC_DIR/jenalyn-6.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-6"
+
+ln -sfn "$SRC_DIR/jenalyn-7.png" "$TARGET_DIR_BACKGROUNDS/jenalyn-7"
+
+echo "Zyphor: Wallpapers configured."
