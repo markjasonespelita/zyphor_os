@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+  echo "Zyphor: Removing wallpaper symlinks..."
+
+  # removing symlinks
+
+  rm -f /usr/share/images/desktop-base/nicole-1
+
+  rm -f /usr/share/images/desktop-base/nicole-2
+
+  rm -f /usr/share/images/desktop-base/nicole-3
+
+  rm -f /usr/share/images/desktop-base/nicole-4
+
+  rm -f /usr/share/backgrounds/nicole-1
+
+  rm -f /usr/share/backgrounds/nicole-2
+
+  rm -f /usr/share/backgrounds/nicole-3
+
+  rm -f /usr/share/backgrounds/nicole-4
+
+  # removing raw files
+
+  rm -f /usr/share/backgrounds/wallpapers-nicole/nicole-1.jpg
+
+  rm -f /usr/share/backgrounds/wallpapers-nicole/nicole-2.jpg
+
+  rm -f /usr/share/backgrounds/wallpapers-nicole/nicole-3.jpg
+
+  rm -f /usr/share/backgrounds/wallpapers-nicole/nicole-4.jpg
+
+  echo "Zyphor: Cleanup done."
+fi
