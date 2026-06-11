@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+REAL_USER=$(logname 2>/dev/null || echo $SUDO_USER)
+
+if [ -n "$REAL_USER" ]; then
+    sudo -u "$REAL_USER" xdg-open /usr/share/zyphor-whats-new/release-notes.html &
+fi
+
+exit 0
