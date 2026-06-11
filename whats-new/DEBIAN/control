@@ -1,5 +1,5 @@
 Package: zyphor-whats-new
-Version: 1.0.3-alpha
+Version: 1.0.0-stable
 Section: utils
 Priority: optional
 Architecture: amd64
