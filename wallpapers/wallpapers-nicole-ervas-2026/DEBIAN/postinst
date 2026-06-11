@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+echo "Zyphor: Applying wallpapers setup..."
+
+TARGET_DIR_DESKTOP_BASE="/usr/share/images/desktop-base"
+TARGET_DIR_BACKGROUNDS="/usr/share/backgrounds"
+SRC_DIR="/usr/share/backgrounds/wallpapers-nicole"
+
+mkdir -p "$TARGET_DIR_DESKTOP_BASE"
+
+# safe symlinks (overwrite only if ours)
+ln -sfn "$SRC_DIR/nicole-1.jpg" "$TARGET_DIR_DESKTOP_BASE/nicole-1"
+
+ln -sfn "$SRC_DIR/nicole-2.jpg" "$TARGET_DIR_DESKTOP_BASE/nicole-2"
+
+ln -sfn "$SRC_DIR/nicole-3.jpg" "$TARGET_DIR_DESKTOP_BASE/nicole-3"
+
+ln -sfn "$SRC_DIR/nicole-4.jpg" "$TARGET_DIR_DESKTOP_BASE/nicole-4"
+
+ln -sfn "$SRC_DIR/nicole-1.jpg" "$TARGET_DIR_BACKGROUNDS/nicole-1"
+
+ln -sfn "$SRC_DIR/nicole-2.jpg" "$TARGET_DIR_BACKGROUNDS/nicole-2"
+
+ln -sfn "$SRC_DIR/nicole-3.jpg" "$TARGET_DIR_BACKGROUNDS/nicole-3"
+
+ln -sfn "$SRC_DIR/nicole-4.jpg" "$TARGET_DIR_BACKGROUNDS/nicole-4"
+
+echo "Zyphor: Wallpapers configured."
