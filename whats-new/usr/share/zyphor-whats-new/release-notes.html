@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zyphor OS — What's New</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f14;
+      --surface:   #13161e;
+      --border:    #1e2330;
+      --accent:    #5b8fff;
+      --accent2:   #a78bfa;
+      --text:      #e4e8f0;
+      --muted:     #6b7280;
+      --green:     #34d399;
+      --yellow:    #fbbf24;
+      --red:       #f87171;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 56px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(91,143,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(91,143,255,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(91,143,255,0.25);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    main {
+      padding: 48px 0 80px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-icon {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── Items ── */
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+
+    .item:hover { border-color: rgba(91,143,255,0.3); }
+
+    .item-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .dot-green  { background: var(--green); }
+    .dot-blue   { background: var(--accent); }
+    .dot-yellow { background: var(--yellow); }
+    .dot-purple { background: var(--accent2); }
+    .dot-red    { background: var(--red); }
+
+    .item-content strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .item-content p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <span class="logo-text">Zyphor OS</span>
+      </div>
+      <div class="badge">Version 1.0.0</div>
+      <h1>What's <span>New</span></h1>
+      <p class="subtitle">First stable release — built from the ground up.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-icon">🐚</span>
+          <span class="section-title">zyshell — Custom Shell</span>
+        </div>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-dot dot-green"></div>
+            <div class="item-content">
+              <strong>Arrow-key history navigation</strong>
+              <p>Browse previous commands using the up and down arrow keys.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-green"></div>
+            <div class="item-content">
+              <strong>I/O redirection</strong>
+              <p>Full support for <code style="color:var(--accent);font-size:12px">&gt;</code>, <code style="color:var(--accent);font-size:12px">&gt;&gt;</code>, and <code style="color:var(--accent);font-size:12px">&lt;</code> operators.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-green"></div>
+            <div class="item-content">
+              <strong>Pipeline support</strong>
+              <p>Chain commands together using <code style="color:var(--accent);font-size:12px">|</code> pipes.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-green"></div>
+            <div class="item-content">
+              <strong>Git branch in prompt</strong>
+              <p>Displays the current Git branch name directly in the shell prompt.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-green"></div>
+            <div class="item-content">
+              <strong>Glob &amp; tilde expansion</strong>
+              <p>Supports <code style="color:var(--accent);font-size:12px">~</code> home expansion and wildcard glob patterns.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-blue"></div>
+            <div class="item-content">
+              <strong>Color ls output</strong>
+              <p>File listings are color-coded by type automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-icon">🖥️</span>
+          <span class="section-title">Desktop &amp; GUI</span>
+        </div>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-dot dot-purple"></div>
+            <div class="item-content">
+              <strong>SDL2 GUI Framework</strong>
+              <p>Custom widget library with buttons, headings, text inputs, and word-wrapped paragraphs.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-purple"></div>
+            <div class="item-content">
+              <strong>Grid layout system</strong>
+              <p>Bootstrap-style responsive grid built on top of SDL2 and SDL2_ttf.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-purple"></div>
+            <div class="item-content">
+              <strong>What's New viewer</strong>
+              <p>This screen — launches once after each system update to show release notes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-icon">📦</span>
+          <span class="section-title">System &amp; Utilities</span>
+        </div>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-dot dot-yellow"></div>
+            <div class="item-content">
+              <strong>C helper libraries</strong>
+              <p>Built-in string, validation, and command utilities available system-wide.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-yellow"></div>
+            <div class="item-content">
+              <strong>JSON support</strong>
+              <p>Lightweight C JSON library with read, push, delete, and update operations — no third-party dependencies.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-dot dot-yellow"></div>
+            <div class="item-content">
+              <strong>.deb package manager integration</strong>
+              <p>All Zyphor OS components ship as installable <code style="color:var(--accent);font-size:12px">.deb</code> packages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Zyphor OS 1.0.0 &nbsp;·&nbsp; Built by Mark Jason P. Espelita &nbsp;·&nbsp; <a href="#">View on GitHub</a></p>
+  </footer>
+
+</body>
+</html>
