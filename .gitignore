@@ -28,3 +28,6 @@ live-image-amd64.packages
 bootHardDisk
 bootCDROM
 vmInit
+
+# debian packages
+/*.deb
