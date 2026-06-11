@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zyphor OS - What's New</title>
+
+<style>
+:root {
+    --bg: #0f1117;
+    --card: #181c24;
+    --card-hover: #1f2430;
+    --text: #e6edf3;
+    --muted: #9ca3af;
+    --border: #2d333b;
+    --accent: #3b82f6;
+    --success: #22c55e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 0 30px rgba(0,0,0,.4);
+}
+
+.logo {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-top: 0;
+    color: white;
+}
+
+.version {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--success);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.section {
+    margin-bottom: 25px;
+    padding: 18px;
+    background: rgba(255,255,255,.02);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: .2s;
+}
+
+.section:hover {
+    background: var(--card-hover);
+}
+
+.section h2 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+}
+
+.release-count {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div id="logo" class="logo"></div>
+
+    <h1>🚀 What's New</h1>
+
+    <div id="version" class="version"></div>
+
+    <div id="releaseCount" class="release-count"></div>
+
+    <div id="sections"></div>
+
+    <div class="footer">
+        Thank you for using Zyphor OS ❤️<br>
+        Open Source • Community Driven • Built with Consistency
+    </div>
+</div>
+
+<script>
+
+/*
+|--------------------------------------------------------------------------
+| ONLY EDIT THIS OBJECT FOR NEW RELEASES
+|--------------------------------------------------------------------------
+*/
+
+/*
+sections: [
+    {
+        title: "✨ New Features",
+        items: []
+    },
+
+    {
+        title: "🔧 Improvements",
+        items: []
+    },
+
+    {
+        title: "🐞 Bug Fixes",
+        items: []
+    },
+]
+*/
+
+const releaseNotes = {
+    distro: "Zyphor OS",
+    version: "1.11.1-u11",
+    date: "Updated On: June 11, 2026",
+
+    sections: [
+        {
+            title: "✨ New Features",
+            items: [
+                "Added Zyphor What's New that shows system updates and changes in the browser after upgrades.",
+            ]
+        }
+    ]
+};
+
+/*
+|--------------------------------------------------------------------------
+| RENDERER
+|--------------------------------------------------------------------------
+*/
+
+function renderReleaseNotes() {
+
+    document.getElementById("logo").textContent =
+        releaseNotes.distro;
+
+    document.getElementById("version").innerHTML = `
+        Version ${releaseNotes.version}
+        • ${releaseNotes.date}
+        <span class="badge">LATEST</span>
+    `;
+
+    const totalItems = releaseNotes.sections.reduce(
+        (sum, section) => sum + section.items.length,
+        0
+    );
+
+    document.getElementById("releaseCount").innerHTML =
+        `${releaseNotes.sections.length} sections • ${totalItems} updates`;
+
+    const sectionsContainer =
+        document.getElementById("sections");
+
+    releaseNotes.sections.forEach(section => {
+
+        const sectionElement =
+            document.createElement("div");
+
+        sectionElement.className = "section";
+
+        sectionElement.innerHTML = `
+            <h2>${section.title}</h2>
+            <ul>
+                ${section.items
+                    .map(item => `<li>${item}</li>`)
+                    .join("")}
+            </ul>
+        `;
+
+        sectionsContainer.appendChild(sectionElement);
+    });
+}
+
+renderReleaseNotes();
+
+</script>
+
+</body>
+</html>
