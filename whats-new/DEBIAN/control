@@ -1,0 +1,11 @@
+Package: zyphor-whats-new
+Version: 1.0.3-alpha
+Section: utils
+Priority: optional
+Architecture: amd64
+Depends: xdg-utils
+Maintainer: Mark Jason P. Espelita
+Description: Zyphor OS What's New
+ A lightweight release notes viewer for Zyphor OS that shows system updates
+ and changes in the browser after upgrades.
+ 
