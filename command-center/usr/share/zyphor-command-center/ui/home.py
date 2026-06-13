@@ -48,9 +48,13 @@ class HomePage(QWidget):
             font-weight: bold;
         """)
 
-        version = QLabel("Version 1.11.1-u12 • Updated On: June 11, 2026 • Upgrade now to get the latest features, improvements, and fixes."
-        )
+        version = QLabel("Version 1.11.1-u12 • Updated On: June 11, 2026")
+        notice = QLabel("Upgrade now to get the latest features, improvements, and fixes.")
         version.setStyleSheet("""
+            color: #9ca3af;
+            font-size: 15px;
+        """)
+        notice.setStyleSheet("""
             color: #9ca3af;
             font-size: 15px;
         """)
@@ -58,10 +62,7 @@ class HomePage(QWidget):
         layout.addWidget(distro)
         layout.addWidget(title)
         layout.addWidget(version)
-
-        # stats = QLabel("1 section • 2 updates")
-        # stats.setStyleSheet("color:#9ca3af;")
-        # layout.addWidget(stats)
+        layout.addWidget(notice)
 
         # ================================================================
 
