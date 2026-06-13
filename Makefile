@@ -7,7 +7,7 @@ status:
 
 add:
 	git add Makefile
-	git commit -m "chore: added pull in the Makefile automation"
+	git commit -m "chore: modified Makefile"
 
 push:
 	git push origin $(branch)
