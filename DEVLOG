@@ -37,3 +37,4 @@ This will be updated daily.
 - make the ZCC homepage as Whats New page.
 - released ZCC homepage as Whats New page.
 - utilizes Makefile for git deployment automation.
+- New OS banner format: Zyphor OS vX.X.X-uX (ZyShell) X.X.X.
