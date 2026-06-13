@@ -9,6 +9,8 @@ Required Changes
 - os-release/DEBIAN/postinst
 - whats-new/DEBIAN/control
 - whats-new/usr/share/zyphor-whats-new/release-notes.html
+- command-center/DEBIAN/control
+- command-center/usr/share/zyphor-command-center/ui/home.py
 
 - updates/DEBIAN/control (if new default package was introduced).
 
