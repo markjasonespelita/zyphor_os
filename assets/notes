@@ -1,0 +1,6 @@
+grub-screensaver
+- os-config/common/bootloaders/grub-pc/splash.png
+- os-config/common/includes.binary/isolinux/splash.png
+
+banner-installer
+- os-config/common/includes.installer/usr/share/graphics/logo_debian.png
