@@ -1,5 +1,28 @@
 CC = gcc
 
+# DEV AUTOMATION
+
+status:
+	git status
+
+add:
+	git add Makefile
+	git commit -m "chore: added pull in the Makefile automation"
+
+push:
+	git push origin $(branch)
+
+pull:
+	git pull origin $(branch)
+
+merge:
+	git merge $(branch)
+
+switch:
+	git checkout $(branch)
+
+# BOOT AUTOMATION
+
 vmInit:
 	$(CC) vmInit.c \
 	 helpers/helperInput.c \
