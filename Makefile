@@ -6,8 +6,18 @@ status:
 	git status
 
 add:
-	git add assets
-	git commit -m "chore: added assets to easily locate branding"
+	git add assets/banner-installer/logo_debian.png
+	git commit -m "chore: renamed the assets folder into assets-xfce4"
+
+	git add assets/grub-screensaver/splash.png
+	git commit -m "chore: renamed the assets folder into assets-xfce4 also"
+
+	git add assets/notes
+	git commit -m "chore: renamed the assets folder into assets-xfce4 also"
+
+	git add assets-xfce4/
+	git commit -m "chore: renamed the assets folder into assets-xfce4 also (main folder)"
+
 	git add Makefile
 	git commit -m "chore: modified Makefile"
 
