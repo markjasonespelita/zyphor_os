@@ -50,7 +50,7 @@ class HomePage(QWidget):
 
         # IMPORTANT ==================== (Date and Version)
 
-        version = QLabel("Version 1.11.1-u13 • Updated On: June 13, 2026")
+        version = QLabel("Version 1.11.1-u14 • Updated On: June 13, 2026")
 
         # /IMPORTANT =================== (Date and Version)
 
@@ -93,7 +93,8 @@ class HomePage(QWidget):
         feature_layout.addWidget(section_title)
 
         changes = [
-            "Converted the Zyphor Command Center homepage into a dedicated \"What's New\" page, allowing users to easily stay informed about newly added features, system improvements, package updates, security enhancements, and other important project developments.",
+            "The ZyShell startup banner has been refreshed to provide a cleaner and more consistent display of system version information.",
+            "New OS banner format: Zyphor OS vX.X.X-uX (ZyShell) X.X.X"
         ]
 
         for item in changes:
