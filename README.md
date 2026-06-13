@@ -8,6 +8,8 @@ Download the latest **Zyphor OS ISO** and get started in minutes.
 
 📺 **[Watch the Installation Video (03:55 Min.)](https://drive.google.com/file/d/1QqyUYzDJKbLRnqAmLOLGIoHBECEsIeuK/preview)** 
 
+🚨 Please watch the installation video before installing Zyphor OS. The installation process and important setup instructions are explained in the video. Skipping it may result in installation issues or missed configuration steps.
+
 > 📦 Hosted on Google Drive  
 > 💿 File Type: ISO Image  
 
@@ -17,7 +19,7 @@ zyphor help
 ```
 ---
 
-**Creator:** Mark Jason Penote Espelita  
+**Creator:** Mark Jason Penote Espelita, the Zyphor OS Community, and Contributors  
 **Facebook Account:** https://www.facebook.com/mark.jason.penote.espelita  
 **Facebook Page:** https://www.facebook.com/profile.php?id=61573426796629  
 **Email:** markjasonespelita@gmail.com  
