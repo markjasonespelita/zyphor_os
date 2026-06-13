@@ -7,12 +7,16 @@ status:
 
 add:
 	git add Makefile
-	git commit -m "chore: added add, push and status command on Makefile."
-	git add DEVLOG
-	git commit -m "chore: modified DEVLOG"
+	git commit -m "chore: added merge, switch(checkout) in the Makefile automation"
 
 push:
 	git push origin $(branch)
+
+merge:
+	git merge $(branch)
+
+switch:
+	git checkout $(branch)
 
 # BOOT AUTOMATION
 
