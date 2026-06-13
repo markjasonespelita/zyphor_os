@@ -7,10 +7,13 @@ status:
 
 add:
 	git add Makefile
-	git commit -m "chore: added merge, switch(checkout) in the Makefile automation"
+	git commit -m "chore: added pull in the Makefile automation"
 
 push:
 	git push origin $(branch)
+
+pull:
+	git pull origin $(branch)
 
 merge:
 	git merge $(branch)
