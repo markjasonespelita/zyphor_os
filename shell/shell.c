@@ -530,7 +530,7 @@ void show_os_screen(void)
         fclose(f);
     }
 
-    printf("\n\033[1m%s\033[0m  \033[2m%s\033[0m\n\n", pretty_name, version_id);
+    printf("\n\033[1m%s\033[0m  \033[2m%s\033[0m\n", pretty_name, "(ZyShell)");
 }
 
 // ── Command execution ─────────────────────────────────────────────────────────
