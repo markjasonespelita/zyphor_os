@@ -6,6 +6,8 @@ status:
 	git status
 
 add:
+	git add assets
+	git commit -m "chore: added assets to easily locate branding"
 	git add Makefile
 	git commit -m "chore: modified Makefile"
 
