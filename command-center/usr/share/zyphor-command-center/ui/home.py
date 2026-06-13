@@ -48,7 +48,12 @@ class HomePage(QWidget):
             font-weight: bold;
         """)
 
-        version = QLabel("Version 1.11.1-u12 • Updated On: June 11, 2026")
+        # IMPORTANT ==================== (Date and Version)
+
+        version = QLabel("Version 1.11.1-u13 • Updated On: June 13, 2026")
+
+        # /IMPORTANT =================== (Date and Version)
+
         notice = QLabel("Upgrade now to get the latest features, improvements, and fixes.")
         version.setStyleSheet("""
             color: #9ca3af;
@@ -88,8 +93,7 @@ class HomePage(QWidget):
         feature_layout.addWidget(section_title)
 
         changes = [
-            "Introduced Zyphor What's New utility.",
-            "Published Zyphor What's New in the official repository."
+            "Converted the Zyphor Command Center homepage into a dedicated \"What's New\" page, allowing users to easily stay informed about newly added features, system improvements, package updates, security enhancements, and other important project developments.",
         ]
 
         for item in changes:
