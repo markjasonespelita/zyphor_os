@@ -1,5 +1,5 @@
 Package: zyphor-updates
-Version: 4.0.1
+Version: 5.0.0
 Section: utils
 Priority: optional
 Architecture: all
@@ -34,6 +34,7 @@ Depends: zyphor-os-release,
  drawing,
  simplescreenrecorder,
  ufw,
- zyshell
+ zyshell,
+ zyphor-whats-new
 Maintainer: Mark Jason P. Espelita
 Description: Zyphor OS Updates
