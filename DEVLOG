@@ -36,3 +36,4 @@ This will be updated daily.
 2026-06-13
 - make the ZCC homepage as Whats New page.
 - released ZCC homepage as Whats New page.
+- utilizes Makefile for git deployment automation.
