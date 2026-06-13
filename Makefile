@@ -33,6 +33,10 @@ merge:
 switch:
 	git checkout $(branch)
 
+# BUILD AUTOMATION
+
+
+
 # BOOT AUTOMATION
 
 vmInit:
