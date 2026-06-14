@@ -65,7 +65,7 @@ menu-cfg
 kali-finish-install
 - assets-xfce4/kali-finish-install
 
-- os-config/common/bootloaders/syslinux_common/menu.cfg
+- os-config/common/includes.installer/kali-finish-install
 
 preseed
 - assets-xfce4/preseed.cfg
