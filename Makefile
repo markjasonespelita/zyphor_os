@@ -7,13 +7,13 @@ status:
 
 add:
 	git add assets-xfce4/default/kali-finish-install
-	git commit -m "chore: modified assets-xfce4/default/kali-finish-install - remove chmod +x on the zyphor file"
+	git commit -m "chore: modified assets-xfce4/default/kali-finish-install - added the installation default of ZCC and zyshell."
 
 	git add assets-xfce4/horizon/kali-finish-install
-	git commit -m "chore: modified assets-xfce4/horizon/kali-finish-install - remove chmod +x on the zyphor file"
+	git commit -m "chore: modified assets-xfce4/horizon/kali-finish-install - added the installation default of ZCC and zyshell."
 
 	git add os-config/common/includes.installer/kali-finish-install
-	git commit -m "chore: modified os-config/common/includes.installer/kali-finish-install - remove chmod +x on the zyphor file"
+	git commit -m "chore: modified os-config/common/includes.installer/kali-finish-install - added the installation default of ZCC and zyshell."
 
 	git add Makefile
 	git commit -m "chore: modified Makefile"
