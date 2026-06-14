@@ -36,3 +36,38 @@ face-icon
 - assets-xfce4/face-icon/face.png
 
 - os-config/variant-xfce/includes.chroot/etc/skel/.face
+
+issue
+- assets-xfce4/issue
+
+- os-config/variant-xfce/includes.chroot/etc/issue
+
+os-release
+- assets-xfce4/os-release
+
+- os-config/variant-xfce/includes.chroot/etc/os-release
+
+grub-cfg
+- assets-xfce4/grub.cfg
+
+- os-config/common/bootloaders/grub-pc/grub.cfg
+
+grub
+- assets-xfce4/grub
+
+- os-config/variant-xfce/includes.chroot/etc/default/grub
+
+menu-cfg
+- assets-xfce4/menu.cfg
+
+- os-config/common/bootloaders/syslinux_common/menu.cfg
+
+kali-finish-install
+- assets-xfce4/kali-finish-install
+
+- os-config/common/includes.installer/kali-finish-install
+
+preseed
+- assets-xfce4/preseed.cfg
+
+- os-config/common/includes.installer/preseed.cfg
