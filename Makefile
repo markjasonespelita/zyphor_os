@@ -25,6 +25,8 @@ switch:
 
 copy-assets:
 	cp -r assets-xfce4/fastfetch os-config/variant-xfce/includes.chroot/etc/skel/.config/
+
+	cp -r assets-xfce4/banner-installer/logo_debian.png os-config/common/includes.installer/usr/share/graphics/logo_debian.png
 	
 	cp -r assets-xfce4/default-wallpapers/backgrounds.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds.png
 	cp -r assets-xfce4/default-wallpapers/backgrounds2.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds2.png
