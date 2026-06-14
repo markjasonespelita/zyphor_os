@@ -6,47 +6,11 @@ status:
 	git status
 
 add:
-	git add assets-xfce4/banner-installer/logo_debian.png
-	git commit -m "chore: deleted logo_debian"
-
-	git add assets-xfce4/default-grub-bootloader-screensaver/grub-bootloader-screen-saver.png 
-	git commit -m "chore: deleted assets-xfce4/default-grub-bootloader-screensaver/grub-bootloader-screen-saver.png"
-
-	git add assets-xfce4/default-grub-bootloader-screensaver/zyphor-full.png
-	git commit -m "chore: deleted assets-xfce4/default-grub-bootloader-screensaver/zyphor-full.png"
-
-	git add assets-xfce4/default-wallpapers/backgrounds.png
-	git commit -m "chore: deleted assets-xfce4/default-wallpapers/backgrounds.png"
-
-	git add assets-xfce4/default-wallpapers/backgrounds2.png
-	git commit -m "chore: deleted assets-xfce4/default-wallpapers/backgrounds2.png"
-
-	git add assets-xfce4/default-wallpapers/backgrounds3.png
-	git commit -m "chore: deleted assets-xfce4/default-wallpapers/backgrounds3.png"
-
-	git add assets-xfce4/default-wallpapers/backgrounds4.png
-	git commit -m "chore: deleted assets-xfce4/default-wallpapers/backgrounds4.png"
-
-	git add assets-xfce4/face-icon/face.png
-	git commit -m "chore: deleted assets-xfce4/face-icon/face.png"
-
-	git add assets-xfce4/fastfetch/config.jsonc
-	git commit -m "chore: deleted assets-xfce4/fastfetch/config.jsonc"
-
-	git add assets-xfce4/fastfetch/zyphor.txt
-	git commit -m "chore: deleted assets-xfce4/fastfetch/zyphor.txt"
-
-	git add assets-xfce4/grub-screensaver/splash.png
-	git commit -m "chore: deleted assets-xfce4/grub-screensaver/splash.png"
+	git add assets-xfce4/default/kali-finish-install
+	git commit -m "chore: modified assets-xfce4/default/kali-finish-install - remove the backgrounds5"
 
 	git add assets-xfce4/notes
-	git commit -m "chore: modified assets-xfce4/notes"
-
-	git add assets-xfce4/default/
-	git commit -m "chore: added assets-xfce4/default/"
-
-	git add assets-xfce4/horizon/
-	git commit -m "chore: added assets-xfce4/horizon/"
+	git commit -m "chore: modified assets-xfce4/notes - changed the kali finish install destination file."
 
 	git add Makefile
 	git commit -m "chore: modified Makefile"
@@ -90,7 +54,7 @@ copy-default-assets:
 
 	cp -r assets-xfce4/default/menu.cfg os-config/common/bootloaders/syslinux_common/menu.cfg
 
-	cp -r assets-xfce4/default/kali-finish-install os-config/common/bootloaders/syslinux_common/menu.cfg
+	cp -r assets-xfce4/default/kali-finish-install os-config/common/includes.installer/kali-finish-install
 
 	cp -r assets-xfce4/default/preseed.cfg os-config/common/includes.installer/preseed.cfg
 
@@ -122,7 +86,7 @@ copy-horizon-assets:
 
 	cp -r assets-xfce4/horizon/menu.cfg os-config/common/bootloaders/syslinux_common/menu.cfg
 
-	cp -r assets-xfce4/horizon/kali-finish-install os-config/common/bootloaders/syslinux_common/menu.cfg
+	cp -r assets-xfce4/horizon/kali-finish-install os-config/common/includes.installer/kali-finish-install
 
 	cp -r assets-xfce4/horizon/preseed.cfg os-config/common/includes.installer/preseed.cfg
 
