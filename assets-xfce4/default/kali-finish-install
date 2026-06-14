@@ -25,7 +25,6 @@ configure_zyphor() {
     ln -sf /usr/share/backgrounds/backgrounds2.png /usr/share/images/desktop-base/default-2
     ln -sf /usr/share/backgrounds/backgrounds3.png /usr/share/images/desktop-base/default-3
     ln -sf /usr/share/backgrounds/backgrounds4.png /usr/share/images/desktop-base/default-4
-    ln -sf /usr/share/backgrounds/backgrounds5.png /usr/share/images/desktop-base/default-5
 
     # ── LightDM Face Icon ──────────────────────────────────────────────────────
     echo "INFO: Configuring LightDM face icon..."
