@@ -52,10 +52,6 @@ configure_zyphor() {
     echo "INFO: Installing Zyphor Command Center..."
     apt install -y zyphor-command-center
 
-    # ── ZyShell ─────────────────────────────────────────────────────────────
-    echo "INFO: Installing ZyShell..."
-    apt install -y zyshell
-
     # ── Plymouth (TODO) ────────────────────────────────────────────────────────
     # echo "INFO: Configuring Plymouth theme..."
     # plymouth-set-default-theme zyphor --rebuild-initrd
