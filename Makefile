@@ -6,9 +6,6 @@ status:
 	git status
 
 add:
-	git add assets-xfce4/notes
-	git commit -m "chore: modified notes"
-
 	git add Makefile
 	git commit -m "chore: modified Makefile"
 
@@ -40,6 +37,9 @@ copy-assets:
 	cp -r assets-xfce4/face-icon/face.png os-config/variant-xfce/includes.chroot/etc/skel/.face
 
 	echo "\nAssets Copied!\n"
+
+build:
+	./build.sh --variant xfce --verbose
 
 # BOOT AUTOMATION
 
