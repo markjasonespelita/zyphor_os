@@ -6,17 +6,8 @@ status:
 	git status
 
 add:
-	git add assets/banner-installer/logo_debian.png
-	git commit -m "chore: renamed the assets folder into assets-xfce4"
-
-	git add assets/grub-screensaver/splash.png
-	git commit -m "chore: renamed the assets folder into assets-xfce4 also"
-
-	git add assets/notes
-	git commit -m "chore: renamed the assets folder into assets-xfce4 also"
-
-	git add assets-xfce4/
-	git commit -m "chore: renamed the assets folder into assets-xfce4 also (main folder)"
+	git add assets-xfce4/notes
+	git commit -m "chore: modified notes"
 
 	git add Makefile
 	git commit -m "chore: modified Makefile"
@@ -35,7 +26,20 @@ switch:
 
 # BUILD AUTOMATION
 
+copy-assets:
+	cp -r assets-xfce4/fastfetch os-config/variant-xfce/includes.chroot/etc/skel/.config/
+	
+	cp -r assets-xfce4/default-wallpapers/backgrounds.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds.png
+	cp -r assets-xfce4/default-wallpapers/backgrounds2.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds2.png
+	cp -r assets-xfce4/default-wallpapers/backgrounds3.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds3.png
+	cp -r assets-xfce4/default-wallpapers/backgrounds4.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds4.png
 
+	cp -r assets-xfce4/default-grub-bootloader-screensaver/grub-bootloader-screen-saver.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/grub-bootloader-screen-saver.png
+	cp -r assets-xfce4/default-grub-bootloader-screensaver/zyphor-full.png os-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/zyphor-full.png
+
+	cp -r assets-xfce4/face-icon/face.png os-config/variant-xfce/includes.chroot/etc/skel/.face
+
+	echo "\nAssets Copied!\n"
 
 # BOOT AUTOMATION
 
