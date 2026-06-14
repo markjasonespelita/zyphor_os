@@ -12,7 +12,7 @@ banner-installer
 fastfetch
 - assets-xfce4/fastfetch
 
-- os-config/variant-xfce/includes.chroot/etc/skel/.config/fastfetch
+- os-config/variant-xfce/includes.chroot/etc/skel/.config/
 
 default-wallpapers
 - assets-xfce4/default-wallpapers/backgrounds.png
