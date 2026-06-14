@@ -48,7 +48,6 @@ configure_zyphor() {
     # ── Zyphor CLI ─────────────────────────────────────────────────────────────
     echo "INFO: Installing Zyphor CLI..."
     apt install -y zyphor-cli
-    chmod +x /usr/local/bin/zyphor
 
     # ── Plymouth (TODO) ────────────────────────────────────────────────────────
     # echo "INFO: Configuring Plymouth theme..."
