@@ -38,3 +38,11 @@ This will be updated daily.
 - released ZCC homepage as Whats New page.
 - utilizes Makefile for git deployment automation.
 - New OS banner format: Zyphor OS vX.X.X-uX (ZyShell) X.X.X.
+
+2026-06-14
+- released of the Zyphor Horizon v1.0.0-beta-2026-06-14-r1
+- released of the Zyphor OS v1.12.0-2026-06-14-r4
+- completed automation using Makefile in switching editions.
+
+2026-06-15
+- merged graphic-jenalyn and graphic-nicole from wr24377965
