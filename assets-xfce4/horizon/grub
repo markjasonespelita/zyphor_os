@@ -5,7 +5,7 @@
 
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR=`( . /etc/os-release && echo Zyphor OS )`
+GRUB_DISTRIBUTOR=`( . /etc/os-release && echo Zyphor Horizon )`
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 GRUB_CMDLINE_LINUX=""
 GRUB_BACKGROUND="/boot/zyphor/splash.png"

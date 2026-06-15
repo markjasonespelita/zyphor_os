@@ -1,0 +1,73 @@
+grub-screensaver
+- assets-xfce4/grub-screensaver/splash.png
+
+- os-config/common/bootloaders/grub-pc/splash.png
+- os-config/common/includes.binary/isolinux/splash.png
+
+banner-installer
+- assets-xfce4/banner-installer/logo_debian.png
+
+- os-config/common/includes.installer/usr/share/graphics/logo_debian.png
+
+fastfetch
+- assets-xfce4/fastfetch
+
+- os-config/variant-xfce/includes.chroot/etc/skel/.config/
+
+default-wallpapers
+- assets-xfce4/default-wallpapers/backgrounds.png
+- assets-xfce4/default-wallpapers/backgrounds2.png
+- assets-xfce4/default-wallpapers/backgrounds3.png
+- assets-xfce4/default-wallpapers/backgrounds4.png
+
+- os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds.png
+- os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds2.png
+- os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds3.png
+- os-config/variant-xfce/includes.chroot/usr/share/backgrounds/backgrounds4.png
+
+default-grub-screensaver
+- assets-xfce4/default-grub-bootloader-screensaver/grub-bootloader-screen-saver.png
+- assets-xfce4/default-grub-bootloader-screensaver/zyphor-full.png
+
+- os-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/grub-bootloader-screen-saver.png
+- os-config/variant-xfce/includes.chroot/usr/share/backgrounds/zyphor-grub-bootloader-screensavers/zyphor-full.png
+
+face-icon
+- assets-xfce4/face-icon/face.png
+
+- os-config/variant-xfce/includes.chroot/etc/skel/.face
+
+issue
+- assets-xfce4/issue
+
+- os-config/variant-xfce/includes.chroot/etc/issue
+
+os-release
+- assets-xfce4/os-release
+
+- os-config/variant-xfce/includes.chroot/etc/os-release
+
+grub-cfg
+- assets-xfce4/grub.cfg
+
+- os-config/common/bootloaders/grub-pc/grub.cfg
+
+grub
+- assets-xfce4/grub
+
+- os-config/variant-xfce/includes.chroot/etc/default/grub
+
+menu-cfg
+- assets-xfce4/menu.cfg
+
+- os-config/common/bootloaders/syslinux_common/menu.cfg
+
+kali-finish-install
+- assets-xfce4/kali-finish-install
+
+- os-config/common/includes.installer/kali-finish-install
+
+preseed
+- assets-xfce4/preseed.cfg
+
+- os-config/common/includes.installer/preseed.cfg

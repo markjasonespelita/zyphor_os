@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/markjasonespelita/zyphor_os/compare/v1.11.1...v1.12.0) (2026-06-14)
+
+
+### Features
+
+* release Zyphor OS v1.12.0-r4 and Zyphor Horizon v1.0.0-beta-r1. ([cc5c32e](https://github.com/markjasonespelita/zyphor_os/commit/cc5c32e03d975c79bd0253a7c026670fa9e07d35))
+
 ## [1.11.1](https://github.com/markjasonespelita/zyphor_os/compare/v1.11.0...v1.11.1) (2026-06-02)
 
 
